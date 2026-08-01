@@ -1,14 +1,45 @@
-# ***04. Variables, Literals, Data Types & Type Casting***
+# 04. Variables, Literals, Data Types & Type Casting
 
 ## Table of Contents
 
-1. [Variables & Memory](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/blob/main/04.%20Variables%2C%20Literals%2C%20Data%20Types%20%26%20Type%20Casting/README.md#1-variables--memory)
-2. [Literals](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/blob/main/04.%20Variables%2C%20Literals%2C%20Data%20Types%20%26%20Type%20Casting/README.md#2-literals)
-3. [Type Conversion & Type Casting](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/blob/main/04.%20Variables%2C%20Literals%2C%20Data%20Types%20%26%20Type%20Casting/README.md#3-type-conversion--type-casting)
-4. [Automatic Type Promotion in Expressions](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/blob/main/04.%20Variables%2C%20Literals%2C%20Data%20Types%20%26%20Type%20Casting/README.md#4-automatic-type-promotion-in-expressions)
-5. [Comprehensive Cheat Sheet & Reference Table](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/blob/main/04.%20Variables%2C%20Literals%2C%20Data%20Types%20%26%20Type%20Casting/README.md#5-comprehensive-cheat-sheet--reference-table)
-6. [🧠 Mental Model](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/blob/main/04.%20Variables%2C%20Literals%2C%20Data%20Types%20%26%20Type%20Casting/README.md#-mental-model)
-7. [📌 Key Terms to Remember](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/blob/main/04.%20Variables%2C%20Literals%2C%20Data%20Types%20%26%20Type%20Casting/README.md#-key-terms-to-remember)
+1. [Variables & Memory](#1-variables--memory)
+2. [Literals](#2-literals)
+3. [Type Conversion & Type Casting](#3-type-conversion--type-casting)
+4. [Automatic Type Promotion in Expressions](#4-automatic-type-promotion-in-expressions)
+5. [Comprehensive Cheat Sheet & Reference Table](#5-comprehensive-cheat-sheet--reference-table)
+6. [🧠 Mental Model](#-mental-model)
+7. [📌 Key Terms to Remember](#-key-terms-to-remember)
+
+---
+
+## 🗺️ Mind Map
+
+```mermaid
+flowchart LR
+    Root["☕ Variables & Types"]
+    Root --> S1["1. Variables & Memory"]
+    Root --> S2["2. Literals"]
+    Root --> S3["3. Type Conversion & Casting"]
+    Root --> S4["4. Automatic Type Promotion"]
+    Root --> S5["5. Cheat Sheet"]
+
+    S1 --> S1a["Syntax & Declaration"]
+    S1 --> S1b["Naming Rules & Conventions"]
+    S1 --> S1c["Stack Memory Allocation"]
+
+    S2 --> S2a["A. Integer Literals"]
+    S2 --> S2b["B. Floating-Point Literals"]
+    S2 --> S2c["C. Character & String Literals"]
+    S2 --> S2d["D. Boolean Literals"]
+
+    S3 --> S3a["A. Widening Casting"]
+    S3 --> S3b["B. Narrowing Casting"]
+
+    S4 --> S4a["Rule 1 - Small Integer Promotion"]
+    S4 --> S4b["Rule 2 - Dominant Operand Rule"]
+```
+
+*Left-to-right, top-to-bottom order matches the document's 1–5 reading sequence.*
 
 ---
 
@@ -18,15 +49,11 @@ A **variable** is a named location in the computer's memory that holds a data va
 
 ### Syntax & Declaration
 
-Java
-
-```
+```java
 dataType variableName = value;
 ```
 
 #### Example & Code:
-
-Java
 
 ```java
 public class VariableBasics{
@@ -47,8 +74,6 @@ public class VariableBasics{
 ```
 
 #### Output:
-
-Plaintext
 
 ```
 Age: 22
@@ -73,8 +98,6 @@ Java strictly enforces variable naming rules. Violating rules causes **compiler 
 
 #### Code Example:
 
-Java
-
 ```java
 public class NamingRules{
     public static void main(String[] args){
@@ -97,8 +120,6 @@ public class NamingRules{
 
 #### Output:
 
-Plaintext
-
 ```
 Money: 500
 Score: 99
@@ -108,8 +129,6 @@ Count: 45
 ### Memory Allocation: Primitive Storage (Stack Memory)
 
 All primitive variables (`int`, `double`, `char`, `boolean`, etc.) store their raw value directly inside **Stack Memory**.
-
-Plaintext
 
 ```
        +-----------------------+
@@ -124,8 +143,6 @@ Plaintext
 When a primitive variable is assigned to another, Java creates a **complete copy** of the value in memory. Modifying one will never affect the other.
 
 #### Code Example:
-
-Java
 
 ```java
 public class PrimitiveMemoryCopy{
@@ -143,8 +160,6 @@ public class PrimitiveMemoryCopy{
 
 #### Output:
 
-Plaintext
-
 ```
 Original Value: 100
 Copied Value: 50
@@ -154,9 +169,7 @@ Copied Value: 50
 
 A **literal** is a fixed value written directly into the source code without requiring computation.
 
-Java
-
-```
+```java
 int count = 100; // '100' is an integer literal
 ```
 
@@ -177,11 +190,8 @@ Java supports four numeral systems for integer literals, as well as readability 
 | Hex | `0x`/`0X` | `0x64` |
 
 > **The `L` Suffix:** By default, every integer literal is treated as a 32-bit `int`. If a value exceeds the maximum `int` value ($2,147,483,647$), you must append `L` or `l` to declare it as a 64-bit `long`.
-> 
 
 #### Code Example:
-
-Java
 
 ```java
 public class IntegerLiterals{
@@ -207,8 +217,6 @@ public class IntegerLiterals{
 
 #### Output:
 
-Plaintext
-
 ```
 Decimal Value: 100
 Binary (0b1100100): 100
@@ -225,8 +233,6 @@ Formatted Int: 45321234
 - Scientific notation uses `e` or `E` (e.g., $1.23 \times 10^4 = 1.23\text{e}4$).
 
 #### Code Example:
-
-Java
 
 ```java
 public class FloatingPointLiterals{
@@ -247,8 +253,6 @@ public class FloatingPointLiterals{
 ```
 
 #### Output:
-
-Plaintext
 
 ```
 Double Value: 3.1415926535
@@ -274,9 +278,7 @@ Scientific 5.67e-3: 0.00567
 
 #### Code Example:
 
-Java
-
-```
+```java
 public class CharacterLiterals{
     public static void main(String[] args){
         char letter = 'J';
@@ -297,8 +299,6 @@ public class CharacterLiterals{
 
 #### Output:
 
-Plaintext
-
 ```
 Letter: J
 Unicode Char: অ
@@ -315,13 +315,10 @@ He said: "Hello!"
 Boolean literals in Java consist strictly of two keywords: **`true`** and **`false`**.
 
 > **Crucial Difference from C/C++:** In C, integers like `1` or `0` can represent boolean flags. In Java, `boolean` is a distinct type and **cannot** be converted to or from integers.
-> 
 
 #### Code Example:
 
-Java
-
-```
+```java
 public class BooleanLiterals{
     public static void main(String[] args){
         boolean isJavaFun = true;
@@ -338,8 +335,6 @@ public class BooleanLiterals{
 
 #### Output:
 
-Plaintext
-
 ```
 Is Java Fun? true
 Is Fish Flying? false
@@ -348,8 +343,6 @@ Is Fish Flying? false
 ## 3. Type Conversion & Type Casting
 
 Type conversion converts a value from one data type to another. It falls into two major categories: **Widening (Implicit)** and **Narrowing (Explicit)**.
-
-Plaintext
 
 ```
                      Widening (Automatic / Safe)
@@ -370,9 +363,7 @@ Widening casting happens automatically when transferring a value from a smaller 
 
 #### Code Example:
 
-Java
-
-```
+```java
 public class WideningCasting{
     public static void main(String[] args){
         byte myByte = 42;
@@ -392,8 +383,6 @@ public class WideningCasting{
 
 #### Output:
 
-Plaintext
-
 ```
 Byte Value: 42
 Int Value: 42
@@ -407,13 +396,10 @@ Double Value: 42.0
 Narrowing casting happens when converting a larger data type into a smaller target type. You must place the target type in parentheses `(targetType)` before the variable.
 
 > **Risks of Narrowing:**
-> 
 > 1. **Truncation:** Fractional digits of floating-point numbers are discarded.
 > 2. **Data Overflow / Wrap-Around:** If the number exceeds the target type's min/max range, binary overflow alters the value completely.
 
-Java
-
-```
+```java
 targetDataType variable = (targetDataType) originalValue;
 ```
 
@@ -422,11 +408,9 @@ targetDataType variable = (targetDataType) originalValue;
 - `byte` range: -128 to 127
 - 130 in binary (32-bit int): `00000000 00000000 00000000 10000010`
 - Casting to 8-bit `byte` keeps only the last 8 bits: `10000010`
-- In two's complement, a leading `1` = negative → `10000010` = **126**
+- In two's complement, a leading `1` = negative → `10000010` = -126
 
 #### Code Example:
-
-Java
 
 ```java
 public class NarrowingCasting{
@@ -454,8 +438,6 @@ public class NarrowingCasting{
 
 #### Output:
 
-Plaintext
-
 ```
 Original Double: 199.99
 Casted Int (Truncated): 199
@@ -472,8 +454,6 @@ When performing operations inside arithmetic expressions, Java automatically pro
 
 All `byte`, `short`, and `char` operands are **automatically promoted to `int`** before evaluation.
 
-Java
-
 ```java
 byte a = 10;
 byte b = 20;
@@ -488,8 +468,6 @@ If an expression contains operands of higher-precision data types, the entire ex
 - Else if any operand is `float`, the result is **`float`**.
 - Else if any operand is `long`, the result is **`long`**.
 
-Plaintext
-
 ```
 Operand Types in Expression               Promoted Result Type
 ---------------------------               --------------------
@@ -503,9 +481,7 @@ float + double                            --> double
 
 #### Example 1: Small Integer Promotion Error & Fix
 
-Java
-
-```
+```java
 public class TypePromotionBasics{
     public static void main(String[] args){
         byte b1 = 40;
@@ -529,8 +505,6 @@ public class TypePromotionBasics{
 
 #### Output:
 
-Plaintext
-
 ```
 Result stored in int: 2000
 Result casted back to byte (Overflow): -48
@@ -538,9 +512,7 @@ Result casted back to byte (Overflow): -48
 
 #### Example 2: Dominant Operand Promotion (`char`, `int`, `double`)
 
-Java
-
-```
+```java
 public class ExpressionPromotion{
     public static void main(String[] args){
         char charVal = 'a';     // ASCII value 97
@@ -563,8 +535,6 @@ public class ExpressionPromotion{
 ```
 
 #### Output:
-
-Plaintext
 
 ```
 Final Expression Result: 960.05
@@ -600,3 +570,5 @@ Think of variables as **scorecards in a cricket stats sheet**:
 - **Overflow** — value wraps around when it exceeds the target type's range
 - **Literal** — a fixed value written directly in code
 - **Type promotion** — automatic upgrade of operand types inside an expression
+
+---
