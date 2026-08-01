@@ -16,7 +16,7 @@
 
 An **operator** is a symbol that performs specific operations on one, two, or three operands and produces a result.
 
-### 5.1 Arithmetic Operators
+### 1. Arithmetic Operators
 
 Used to perform basic mathematical operations.
 
@@ -64,7 +64,7 @@ Double Division ((double)x / y): 3.75
 Modulus Remainder (x % y): 3
 ```
 
-### 5.2 Unary & Increment / Decrement Operators
+### 2. Unary & Increment / Decrement Operators
 
 Operate on a single operand.
 
@@ -111,7 +111,7 @@ Postfix Result (b++): 5 | Final b: 6
 Negated Boolean (!flag): false
 ```
 
-### 5.3 Relational & Logical Operators (Short-Circuit Evaluation)
+### 3. Relational & Logical Operators (Short-Circuit Evaluation)
 
 - **Relational Operators:** Compare two values and return a `boolean` (`==`, `!=`, `>`, `<`, `>=`, `<=`).
 - **Logical Operators:** Combine boolean expressions (`&&`, `||`, `!`).
@@ -156,7 +156,7 @@ Can drive: true
 Count value after short-circuit test: 10
 ```
 
-### 5.4 Assignment & Ternary Operators
+### 4. Assignment & Ternary Operators
 
 #### Assignment Operators
 
@@ -219,7 +219,7 @@ Exam Result: PASS
 Max Number: 82
 ```
 
-### 5.5 Bitwise & Shift Operators
+### 5. Bitwise & Shift Operators
 
 Bitwise operators manipulate individual bits of integer data types (`byte`, `short`, `int`, `long`).
 
@@ -269,7 +269,7 @@ Left Shift (8 << 2):  32
 Right Shift (8 >> 2): 2
 ```
 
-### 5.6 Operator Precedence & Associativity Table(High→Low)
+### 6. Operator Precedence & Associativity Table(High→Low)
 
 Higher operators in the table are evaluated **first**.
 
@@ -290,7 +290,7 @@ Higher operators in the table are evaluated **first**.
 | **Ternary** | `? :` | Right to Left |
 | **Assignment** | `=` `+=` `-=` `*=` `/=` `%=` `&=` `^=` ` | = ``<<= ``>>= ``>>>=` |
 
-## 6. Comprehensive Cheat Sheet & Summary
+## 7. Comprehensive Cheat Sheet & Summary
 
 | **Concept** | **Syntax Example** | **Key Takeaway / Pitfall** |
 | --- | --- | --- |
