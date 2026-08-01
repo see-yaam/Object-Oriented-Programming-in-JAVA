@@ -3,12 +3,6 @@
 ## Table of Contents
 
 1. [User Input](#1-user-input)
-2. [String Operations & Useful Functions](#2-string-operations--useful-functions)
-3. [StringTokenizer (Splitting Text Easily)](#3-stringtokenizer-splitting-text-easily)
-4. [StringBuilder (For Modifying & Reversing Text)](#4-stringbuilder-for-modifying--reversing-text)
-5. [Methods (Java's "Functions")](#5-methods-javas-functions)
-6. [🧠 Mental Model](#-mental-model)
-7. [📌 Key Terms to Remember](#-key-terms-to-remember)
 
 ---
 
@@ -16,13 +10,8 @@
 
 ```mermaid
 flowchart LR
-    Root["☕ Input & Strings"]
+    Root["☕ User Input"]
     Root --> S1["1. User Input"]
-    Root --> S2["2. String Operations"]
-    Root --> S3["3. StringTokenizer"]
-    Root --> S4["4. StringBuilder"]
-    Root --> S5["5. Methods"]
-
     S1 --> S1a["A - import Scanner"]
     S1 --> S1b["B - Scanner sc = new Scanner"]
     S1 --> S1c["C - Reading Data Types"]
@@ -165,4 +154,3 @@ String address = input.nextLine(); // Now works perfectly!
 ```
 
 ---
-
