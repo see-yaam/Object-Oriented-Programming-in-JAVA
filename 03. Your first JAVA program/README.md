@@ -1,5 +1,13 @@
 # ***03. Your first JAVA program: Hello World***
 
+## Table of Contents
+
+1. [Complete Source Code](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/tree/main/03.%20Your%20first%20JAVA%20program#1-complete-source-code)
+2. [Word-by-Word Technical Anatomy](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/tree/main/03.%20Your%20first%20JAVA%20program#2-word-by-word-technical-anatomy)
+3. [Deep Dive: What Does the Dot (.) Operator Mean?](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/tree/main/03.%20Your%20first%20JAVA%20program#3-deep-dive-what-does-the-dot--operator-mean)
+
+---
+
 The standard Java "Hello World" program serves as the entry point for understanding Java syntax, structure, and execution semantics.
 
 ## 1. Complete Source Code
