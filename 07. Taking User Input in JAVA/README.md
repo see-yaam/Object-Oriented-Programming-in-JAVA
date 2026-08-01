@@ -1,4 +1,4 @@
-# 07. Taking User Input & String Handling
+# 07. Taking User Input in JAVA
 
 ## Table of Contents
 
