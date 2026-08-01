@@ -155,6 +155,130 @@ Plaintext
 Can drive: true
 Count value after short-circuit test: 10
 ```
+# Section 3.1: Practical Logic & Short-Circuit Evaluation
+
+Logical operators allow a Java program to evaluate multiple conditions simultaneously and make complex decisions. They operate exclusively on boolean values (true or false) and return a boolean result.
+
+## 1. Quick Reference: Logical Operators
+
+| Operator | Name | Description | True Condition |
+|---|---|---|---|
+| `&&` | Logical AND | Returns true only if ALL conditions are true. | `(A && B)` is true if $A = \text{true}$ and $B = \text{true}$ |
+| `\|\|` | Logical OR | Returns true if AT LEAST ONE condition is true. | `(A \|\| B)` is true if $A = \text{true}$ or $B = \text{true}$ |
+| `!` | Logical NOT | Inverts/flips the boolean value (true becomes false, false becomes true). | `(!A)` is true if $A = \text{false}$ |
+
+## 2. Deep Dive: Short-Circuit Evaluation
+
+Java uses Short-Circuit Evaluation for `&&` and `||` operators to optimize performance and prevent unnecessary computations:
+
+- **Short-Circuit AND (`&&`):** If the first condition is false, Java immediately stops evaluating the remaining conditions because the entire expression is already guaranteed to be false.
+- **Short-Circuit OR (`||`):** If the first condition is true, Java immediately stops evaluating the remaining conditions because the entire expression is already guaranteed to be true.
+
+**Why is this important?**
+
+Short-circuiting prevents runtime crashes like dividing by zero or invoking methods on null objects:
+
+```java
+if (number != 0 && (100 / number) > 5) { ... }
+// If 'number' is 0, the first condition is false, so Java skips (100 / number) and avoids ArithmeticException!
+```
+
+## 3. Practical Example: Weather Checking System
+
+The following program demonstrates how to combine AND (`&&`), OR (`||`), and NOT (`!`) operators to build a multi-condition decision tree.
+
+**Code Example:**
+
+```java
+public class LogicalOperatorsDemo {
+    public static void main(String[] args) {
+
+        // Weather variables
+        double temp = 35;
+        boolean isSunny = true;
+
+        // Condition 1: Check if weather is GOOD AND SUNNY
+        // Requires ALL THREE sub-conditions to be true
+        if (temp <= 30 && temp >= 0 && isSunny) {
+            System.out.println("The weather is GOOD 😀");
+            System.out.println("It is SUNNY outside ☀");
+        }
+        // Condition 2: Check if weather is GOOD AND CLOUDY
+        // '!isSunny' flips true to false (or false to true)
+        else if (temp <= 30 && temp >= 0 && !isSunny) {
+            System.out.println("The weather is GOOD 😀");
+            System.out.println("It is CLOUDY outside ☁");
+        }
+        // Condition 3: Check if weather is BAD (too hot OR too cold)
+        // Returns true if temp is either > 30 OR < 0
+        else if (temp > 30 || temp < 0) {
+            System.out.println("The weather is BAD 😩");
+        }
+    }
+}
+```
+
+## 4. Line-by-Line Code Breakdown
+
+Let's evaluate how Java processes the code when `temp = 35` and `isSunny = true`:
+
+**Step 1: Evaluating the first if statement**
+
+$$\text{Condition: } (\text{temp} \le 30 \ \&\& \ \text{temp} \ge 0 \ \&\& \ \text{isSunny})$$
+
+- `temp <= 30` $\rightarrow$ `35 <= 30` evaluates to `false`.
+- **Short-Circuit Effect:** Because the first check failed in an `&&` chain, Java skips evaluating `temp >= 0` and `isSunny`. The whole block evaluates to `false`.
+
+**Step 2: Evaluating the else if statement**
+
+$$\text{Condition: } (\text{temp} \le 30 \ \&\& \ \text{temp} \ge 0 \ \&\& \ !\text{isSunny})$$
+
+- `temp <= 30` $\rightarrow$ `35 <= 30` evaluates to `false`.
+- **Short-Circuit Effect:** Java skips the remaining checks. The block evaluates to `false`.
+
+**Step 3: Evaluating the second else if statement**
+
+$$\text{Condition: } (\text{temp} > 30 \ \vert\vert \ \text{temp} < 0)$$
+
+- `temp > 30` $\rightarrow$ `35 > 30` evaluates to `true`.
+- **Short-Circuit Effect:** Because the first condition in an `||` chain is true, Java skips evaluating `temp < 0`. The entire block evaluates to `true`.
+
+## 5. Console Output
+
+```
+The weather is BAD 😩
+```
+
+(If you change `temp = 25` and `isSunny = false`, the output will automatically switch to "The weather is GOOD 😀 / It is CLOUDY outside ☁").
+
+## 6. Truth Tables Summary
+
+For quick reference when constructing complex logical rules:
+
+**AND (`&&`) Truth Table**
+
+| A | B | A && B |
+|---|---|---|
+| true | true | true |
+| true | false | false |
+| false | true | false |
+| false | false | false |
+
+**OR (`||`) Truth Table**
+
+| A | B | A \|\| B |
+|---|---|---|
+| true | true | true |
+| true | false | true |
+| false | true | true |
+| false | false | false |
+
+**NOT (`!`) Truth Table**
+
+| A | !A |
+|---|---|
+| true | false |
+| false | true |
 
 ### 4. Assignment & Ternary Operators
 
