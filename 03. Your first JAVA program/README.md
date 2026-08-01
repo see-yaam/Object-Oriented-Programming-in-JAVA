@@ -5,6 +5,7 @@
 1. [Complete Source Code](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/tree/main/03.%20Your%20first%20JAVA%20program#1-complete-source-code)
 2. [Word-by-Word Technical Anatomy](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/tree/main/03.%20Your%20first%20JAVA%20program#2-word-by-word-technical-anatomy)
 3. [Deep Dive: What Does the Dot (.) Operator Mean?](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/tree/main/03.%20Your%20first%20JAVA%20program#3-deep-dive-what-does-the-dot--operator-mean)
+4. [Advanced Output Formatting with printf()](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/tree/main/03.%20Your%20first%20JAVA%20program#04-advanced-output-formatting-with-printf)
 
 ---
 
