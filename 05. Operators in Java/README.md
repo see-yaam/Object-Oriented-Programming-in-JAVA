@@ -155,11 +155,14 @@ Plaintext
 Can drive: true
 Count value after short-circuit test: 10
 ```
-# Section 3.1: Practical Logic & Short-Circuit Evaluation
+
+### 3.1: Practical Logic & Short-Circuit Evaluation
+
 
 Logical operators allow a Java program to evaluate multiple conditions simultaneously and make complex decisions. They operate exclusively on boolean values (true or false) and return a boolean result.
 
-## 1. Quick Reference: Logical Operators
+### 1. Quick Reference: Logical Operators
+
 
 | Operator | Name | Description | True Condition |
 |---|---|---|---|
@@ -167,7 +170,7 @@ Logical operators allow a Java program to evaluate multiple conditions simultane
 | `\|\|` | Logical OR | Returns true if AT LEAST ONE condition is true. | `(A \|\| B)` is true if $A = \text{true}$ or $B = \text{true}$ |
 | `!` | Logical NOT | Inverts/flips the boolean value (true becomes false, false becomes true). | `(!A)` is true if $A = \text{false}$ |
 
-## 2. Deep Dive: Short-Circuit Evaluation
+### 2. Deep Dive: Short-Circuit Evaluation
 
 Java uses Short-Circuit Evaluation for `&&` and `||` operators to optimize performance and prevent unnecessary computations:
 
@@ -183,7 +186,7 @@ if (number != 0 && (100 / number) > 5) { ... }
 // If 'number' is 0, the first condition is false, so Java skips (100 / number) and avoids ArithmeticException!
 ```
 
-## 3. Practical Example: Weather Checking System
+### 3. Practical Example: Weather Checking System
 
 The following program demonstrates how to combine AND (`&&`), OR (`||`), and NOT (`!`) operators to build a multi-condition decision tree.
 
@@ -218,32 +221,32 @@ public class LogicalOperatorsDemo {
 }
 ```
 
-## 4. Line-by-Line Code Breakdown
+### 4. Line-by-Line Code Breakdown
 
 Let's evaluate how Java processes the code when `temp = 35` and `isSunny = true`:
 
 **Step 1: Evaluating the first if statement**
 
-$$\text{Condition: } (\text{temp} \le 30 \ \&\& \ \text{temp} \ge 0 \ \&\& \ \text{isSunny})$$
+$$\text{Condition: } (\text{temp} \leq 30 \text{ AND } \text{temp} \geq 0 \text{ AND } \text{isSunny})$$
 
 - `temp <= 30` $\rightarrow$ `35 <= 30` evaluates to `false`.
 - **Short-Circuit Effect:** Because the first check failed in an `&&` chain, Java skips evaluating `temp >= 0` and `isSunny`. The whole block evaluates to `false`.
 
 **Step 2: Evaluating the else if statement**
 
-$$\text{Condition: } (\text{temp} \le 30 \ \&\& \ \text{temp} \ge 0 \ \&\& \ !\text{isSunny})$$
+$$\text{Condition: } (\text{temp} \leq 30 \text{ AND } \text{temp} \geq 0 \text{ AND } !\text{isSunny})$$
 
 - `temp <= 30` $\rightarrow$ `35 <= 30` evaluates to `false`.
 - **Short-Circuit Effect:** Java skips the remaining checks. The block evaluates to `false`.
 
 **Step 3: Evaluating the second else if statement**
 
-$$\text{Condition: } (\text{temp} > 30 \ \vert\vert \ \text{temp} < 0)$$
+$$\text{Condition: } (\text{temp} > 30 \text{ OR } \text{temp} < 0)$$
 
 - `temp > 30` $\rightarrow$ `35 > 30` evaluates to `true`.
 - **Short-Circuit Effect:** Because the first condition in an `||` chain is true, Java skips evaluating `temp < 0`. The entire block evaluates to `true`.
 
-## 5. Console Output
+### 5. Console Output
 
 ```
 The weather is BAD 😩
@@ -251,7 +254,7 @@ The weather is BAD 😩
 
 (If you change `temp = 25` and `isSunny = false`, the output will automatically switch to "The weather is GOOD 😀 / It is CLOUDY outside ☁").
 
-## 6. Truth Tables Summary
+### 6. Truth Tables Summary
 
 For quick reference when constructing complex logical rules:
 
