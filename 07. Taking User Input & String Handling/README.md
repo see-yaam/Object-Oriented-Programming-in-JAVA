@@ -1,8 +1,27 @@
 # ***07. Taking User Input & String Handling***
 
-## ***Part 1: User input***
+## Table of Contents
 
-## Step 1: The "Header" (`import` statement)
+1. [Why Lists Exist](https://github.com/see-yaam/learn-like-5/blob/main/Introduction%20to%20Python/Chapter-02%20(Python%20Lists)/READEM.md#1-why-lists-exist)
+2. [Creating a List](https://github.com/see-yaam/learn-like-5/blob/main/Introduction%20to%20Python/Chapter-02%20(Python%20Lists)/READEM.md#2-creating-a-list)
+3. [Lists with Mixed Types](https://github.com/see-yaam/learn-like-5/blob/main/Introduction%20to%20Python/Chapter-02%20(Python%20Lists)/READEM.md#3-lists-with-mixed-types)
+4. [List of Lists (Nested Lists)](https://github.com/see-yaam/learn-like-5/blob/main/Introduction%20to%20Python/Chapter-02%20(Python%20Lists)/READEM.md#4-list-of-lists-nested-lists)
+5. [Subsetting — Accessing Elements by Index](https://github.com/see-yaam/learn-like-5/blob/main/Introduction%20to%20Python/Chapter-02%20(Python%20Lists)/READEM.md#5-subsetting--accessing-elements-by-index)
+6. [Negative Indexing](https://github.com/see-yaam/learn-like-5/blob/main/Introduction%20to%20Python/Chapter-02%20(Python%20Lists)/READEM.md#6-negative-indexing)
+7. [Slicing — Selecting Multiple Elements](https://github.com/see-yaam/learn-like-5/blob/main/Introduction%20to%20Python/Chapter-02%20(Python%20Lists)/READEM.md#7-slicing--selecting-multiple-elements)
+8. [Subsetting a List of Lists](https://github.com/see-yaam/learn-like-5/blob/main/Introduction%20to%20Python/Chapter-02%20(Python%20Lists)/READEM.md#8-subsetting-a-list-of-lists)
+9. [Changing List Elements](https://github.com/see-yaam/learn-like-5/blob/main/Introduction%20to%20Python/Chapter-02%20(Python%20Lists)/READEM.md#9-changing-list-elements)
+10. [Adding Elements to a List](https://github.com/see-yaam/learn-like-5/blob/main/Introduction%20to%20Python/Chapter-02%20(Python%20Lists)/READEM.md#10-adding-elements-to-a-list)
+11. [Removing Elements from a List](https://github.com/see-yaam/learn-like-5/blob/main/Introduction%20to%20Python/Chapter-02%20(Python%20Lists)/READEM.md#11-removing-elements-from-a-list)
+12. [The Reference Trap — Copying Lists Correctly](https://github.com/see-yaam/learn-like-5/blob/main/Introduction%20to%20Python/Chapter-02%20(Python%20Lists)/READEM.md#12-the-reference-trap--copying-lists-correctly)
+13. [Practice Questions](https://github.com/see-yaam/learn-like-5/blob/main/Introduction%20to%20Python/Chapter-02%20(Python%20Lists)/READEM.md#13-practice-questions)
+14. [Chapter Summary Table](https://github.com/see-yaam/learn-like-5/blob/main/Introduction%20to%20Python/Chapter-02%20(Python%20Lists)/READEM.md#14-chapter-summary-table)
+
+---
+
+## 1. User input
+
+### A) The "Header" (`import` statement)
 
 In **C**, you wrote `#include <stdio.h>` at the very top of your file to use functions like `printf()` and `scanf()`.
 
@@ -30,7 +49,7 @@ Just like `#include`, you can import different packages for different tools:
 - `import java.util.Arrays;` $\rightarrow$ To perform operations on arrays.
 - `import java.util.*;` $\rightarrow$ The  wildcard imports **all** tools inside the `java.util` package at once.
 
-## Step 2: Breaking Down the Scanner Line
+### B) Breaking Down the Scanner Line
 
 Inside your `main` method, you create the input tool using this exact line:
 
@@ -51,7 +70,7 @@ Let's break down **every single word** in that line:
 | **`Scanner(...)`** | **Constructor** | Initializes the Scanner tool. |
 | **`System.in`** | **Input Source** | Tells the Scanner to listen to your **keyboard** (standard input). |
 
-## Step 3: How to Read Different Types of Input
+### C) How to Read Different Types of Input
 
 Once you write `Scanner sc = new Scanner(System.in);`, you can use `sc` to read whatever data type the user types in:
 
@@ -64,7 +83,7 @@ String word = sc.next();        // Reads a SINGLE word (stops at space)
 String line = sc.nextLine();    // Reads a FULL sentence (reads until Enter is pressed)
 ```
 
-## Step 4: Simple Working Example
+### D) Simple Working Example
 
 Here is a clean, 15-line program taking input for a student's profile:
 
@@ -142,11 +161,11 @@ System.out.print("Enter your full address: ");
 String address = input.nextLine(); // Now works perfectly!
 ```
 
-# ***Part 2:** String Operations & Useful Functions*
+## 2. String Operations & Useful Functions
 
 In Java, `String` comes with built-in "shortcut" functions that let you inspect, modify, and format text effortlessly.
 
-## 1. Most Commonly Used String Functions
+### A) Most Commonly Used String Functions
 
 Here are the most essential built-in String methods you will use every day:
 
@@ -162,7 +181,8 @@ Here are the most essential built-in String methods you will use every day:
 | `equalsIgnoreCase(text)` | Compares two strings ignoring capital/small letters | `"java".equalsIgnoreCase("JAVA")` | `true` |
 | `split("delimiter")` | Cuts a string into an array based on a separator | `"A,B,C".split(",")` | `["A", "B", "C"]` |
 
-## 2. Comparing Strings: `equals()` vs `==`
+
+### B) Comparing Strings: `equals()` vs `==`
 
 > ⚠️ **Important Java Rule:** Never use `==` to compare two text strings!
 > 
@@ -235,11 +255,11 @@ public class StringBuilderSimple{
 }
 ```
 
-## ***Part 3: Methods (Java's "Functions")***
+## 5. Methods (Java's "Functions")
 
 In C, you defined functions outside `main()` and called them directly. In Java, functions are called **Methods**.
 
-## 1. Comparing C vs Java Functions
+### A) Comparing C vs Java Functions
 
 - **In C:**
     
@@ -258,7 +278,7 @@ In C, you defined functions outside `main()` and called them directly. In Java, 
     ```
     
 
-## 2. Line-by-Line Breakdown of a Java Helper Function
+### B) Line-by-Line Breakdown of a Java Helper Function
 
 Java
 
@@ -274,7 +294,7 @@ public static int calculateSum(int num1, int num2)
 | `calculateSum` | The name of your function (you pick this name). |
 | `(int num1, int num2)` | The input parameters (values sent into the function). |
 
-## 3. Clean Modular Example (Keeping `main` Simple)
+### C) Clean Modular Example (Keeping `main` Simple)
 
 Notice how in this example, `main()` only handles user input and output, while all calculation and formatting logic is handed off to separate helper functions:
 
@@ -328,7 +348,7 @@ public class ModularMethods{
 }
 ```
 
-## 4. Full Combined Master Example
+### D) Full Combined Master Example
 
 This program brings everything together:
 
