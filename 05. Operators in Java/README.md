@@ -2,13 +2,13 @@
 
 ## Table of Contents
 
-1. [Arithmetic Operators](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/tree/main/05.%20Operators%20in%20Java#51-arithmetic-operators)
-2. [Unary & Increment / Decrement Operators](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/tree/main/05.%20Operators%20in%20Java#52-unary--increment--decrement-operators)
-3. [Relational & Logical Operators (Short-Circuit Evaluation)](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/tree/main/05.%20Operators%20in%20Java#53-relational--logical-operators-short-circuit-evaluation)
-4. [Assignment & Ternary Operators](https://github.com/see-yaam/learn-like-5/blob/main/Introduction%20to%20Python/Chapter-02%20(Python%20Lists)/READEM.md#4-list-of-lists-nested-lists)
-5. [Bitwise & Shift Operators](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/tree/main/05.%20Operators%20in%20Java#55-bitwise--shift-operators)
-6. [Operator Precedence & Associativity Table(High→Low)](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/tree/main/05.%20Operators%20in%20Java#56-operator-precedence--associativity-tablehighlow)
-7. [Comprehensive Cheat Sheet & Summary](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/tree/main/05.%20Operators%20in%20Java#6-comprehensive-cheat-sheet--summary)
+1. [Arithmetic Operators](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/tree/main/05.%20Operators%20in%20Java#1-arithmetic-operators)
+2. [Unary & Increment / Decrement Operators](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/tree/main/05.%20Operators%20in%20Java#2-unary--increment--decrement-operators)
+3. [Relational & Logical Operators (Short-Circuit Evaluation)](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/tree/main/05.%20Operators%20in%20Java#3-relational--logical-operators-short-circuit-evaluation)
+4. [Assignment & Ternary Operators](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/tree/main/05.%20Operators%20in%20Java#4-assignment--ternary-operators)
+5. [Bitwise & Shift Operators](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/tree/main/05.%20Operators%20in%20Java#5-bitwise--shift-operators)
+6. [Operator Precedence & Associativity Table(High→Low)](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/tree/main/05.%20Operators%20in%20Java#6-operator-precedence--associativity-tablehighlow)
+7. [Comprehensive Cheat Sheet & Summary](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/tree/main/05.%20Operators%20in%20Java#7-comprehensive-cheat-sheet--summary)
 8. [🧠 Mental Model](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/tree/main/05.%20Operators%20in%20Java#-mental-model)
 9. [📌 Key Terms to Remember](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/tree/main/05.%20Operators%20in%20Java#-key-terms-to-remember)
 
