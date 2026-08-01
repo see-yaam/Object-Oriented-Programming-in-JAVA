@@ -1,5 +1,15 @@
 # ***06. Control Flow Statements***
 
+## Table of Contents
+
+1. [Decision-Making Statements](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/tree/main/06.%20Control%20Flow%20Statements#1-decision-making-statements)
+2. [Looping (Iterative) Statements](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/tree/main/06.%20Control%20Flow%20Statements#2-looping-iterative-statements)
+3. [Branching / Jump Statements](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/tree/main/06.%20Control%20Flow%20Statements#3-branching--jump-statements)
+4. [Summary & Comparison Table](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/tree/main/06.%20Control%20Flow%20Statements#4-summary--comparison-table)
+5. [Comprehensive Master Example](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/tree/main/06.%20Control%20Flow%20Statements#5-comprehensive-master-example)
+
+---
+
 By default, Java executes statements sequentially from top to bottom. However, real-world applications require making decisions based on conditions or executing a block of code repeatedly.
 
 **Control Flow Statements** break the sequential execution flow and allow you to direct how your program runs.
