@@ -1,14 +1,48 @@
-# ***01. The Fundamentals***
+# 01. The Fundamentals
 
 ## Table of Contents
 
-1. [What is Java?](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/tree/main/01.%20The%20Fundamentals#1-what-is-java)
-2. [What Can You Build with Java?](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/tree/main/01.%20The%20Fundamentals#2-what-can-you-build-with-java)
-3. [How Java Works](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/tree/main/01.%20The%20Fundamentals#3-how-java-works)
-4. [Deep Dive: JDK vs. JRE vs. JVM](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/tree/main/01.%20The%20Fundamentals#4-deep-dive-jdk-vs-jre-vs-jvm)
-5. [Deep Dive: Java char vs. C char](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/tree/main/01.%20The%20Fundamentals#5-deep-dive-java-char-vs-c-char)
-6. [🧠 Mental Model](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/tree/main/01.%20The%20Fundamentals#-mental-model)
-7. [📌 Key Terms to Remember](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/tree/main/01.%20The%20Fundamentals#-key-terms-to-remember)
+1. [What is Java?](#1-what-is-java)
+2. [What Can You Build with Java?](#2-what-can-you-build-with-java)
+3. [How Java Works](#3-how-java-works)
+4. [Deep Dive: JDK vs. JRE vs. JVM](#4-deep-dive-jdk-vs-jre-vs-jvm)
+5. [Deep Dive: Java char vs. C char](#5-deep-dive-java-char-vs-c-char)
+6. [🧠 Mental Model](#-mental-model)
+7. [📌 Key Terms to Remember](#-key-terms-to-remember)
+
+---
+
+## 🗺️ Mind Map
+
+```mermaid
+mindmap
+  root((Java Fundamentals))
+    What is Java?
+      WORA
+      Bytecode
+    What Can You Build?
+      Enterprise Web Apps
+      Android Apps
+      Big Data Systems
+      Financial Systems
+      Cloud & Distributed Computing
+    How Java Works
+      Source Code .java
+      javac Compiler
+      Bytecode .class
+      JVM Execution
+    JDK vs JRE vs JVM
+      JVM
+        JIT Compiler
+        Garbage Collector
+      JRE
+        JVM + Class Libraries
+      JDK
+        JRE + Dev Tools
+    char Encoding
+      C - 8-bit ASCII
+      Java - 16-bit UTF-16
+```
 
 ---
 
@@ -51,7 +85,7 @@ Java uses a **two-step execution model**: Compilation followed by Interpretation
                                                 +------------------+
 ```
 
-### Step-by-Step Breakdown:
+### Step-by-Step Breakdown
 
 1. **Writing Code**: Developers write human readable code in files with a `.java` extension.
 2. **Compilation**: The Java Compiler (`javac`) converts `.java` files into platform-neutral **Bytecode** stored in `.class` files.
@@ -96,6 +130,8 @@ Understanding the distinctions between JDK, JRE, and JVM is fundamental to Java 
 - **What it is**: The complete software development package required to **write, compile, and debug** Java applications.
 - **Components**: Contains **JRE** + **Development Tools** (such as the `javac` compiler, `jdb` debugger, and `jar` archiver).
 
+#### Cheatsheet: JVM vs JRE vs JDK
+
 | **Tool** | **Who Needs It?** | **Primary Purpose** |
 | --- | --- | --- |
 | **JVM** | Execution Engine | Translates bytecode to machine code. |
@@ -109,9 +145,7 @@ A fundamental distinction between C and Java lies in character encoding:
 - **C Language `char` (8-bit ASCII):** Uses 1 byte of memory, capable of storing only 256 unique characters (primarily English alphabet and basic symbols).
 - **Java Language `char` (16-bit UTF-16 Unicode):** Uses 2 bytes (16 bits) of memory. This allows Java to natively support international scripts (Bangla, Chinese, Arabic, etc.), special math symbols, and expanded character sets.
 
-### Code Example:
-
-Java
+### Code Example
 
 ```java
 public class CharDemo {
@@ -127,9 +161,7 @@ public class CharDemo {
 }
 ```
 
-### Output:
-
-Plaintext
+### Output
 
 ```
 English Character: A
@@ -157,3 +189,5 @@ For JDK/JRE/JVM: the **JVM** is the decoder chip inside the TV. The **JRE** is t
 - **JDK** — JRE + development tools (for building apps)
 - **WORA** — Write Once, Run Anywhere
 - **Unicode (UTF-16)** — Java's 16-bit character encoding
+
+---
