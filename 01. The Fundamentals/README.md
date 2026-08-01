@@ -1,5 +1,17 @@
 # ***01. The Fundamentals***
 
+## Table of Contents
+
+1. [What is Java?](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/tree/main/01.%20The%20Fundamentals#1-what-is-java)
+2. [What Can You Build with Java?](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/tree/main/01.%20The%20Fundamentals#2-what-can-you-build-with-java)
+3. [How Java Works](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/tree/main/01.%20The%20Fundamentals#3-how-java-works)
+4. [Deep Dive: JDK vs. JRE vs. JVM](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/tree/main/01.%20The%20Fundamentals#4-deep-dive-jdk-vs-jre-vs-jvm)
+5. [Deep Dive: Java char vs. C char](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/tree/main/01.%20The%20Fundamentals#5-deep-dive-java-char-vs-c-char)
+6. [🧠 Mental Model](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/tree/main/01.%20The%20Fundamentals#-mental-model)
+7. [📌 Key Terms to Remember](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/tree/main/01.%20The%20Fundamentals#-key-terms-to-remember)
+
+---
+
 ## 1. What is Java?
 
 **Java** is a high-level, class-based, object oriented programming language designed to be platform-independent. Developed by Sun Microsystems (now owned by Oracle) in 1995, its core philosophy is **WORA** (*"Write Once, Run Anywhere"*).
