@@ -445,12 +445,3 @@ Negative score found (-1). Terminating process!
 ```
 
 ---
-
-## Editorial Notes
-
-*Formatting/structural issues found and fixed — flagged here per your instructions rather than fixed silently:*
-
-1. **TOC links were broken anchors**: Original TOC entries pointed to the full GitHub repo tree URL instead of relative in-page anchors. Converted to relative anchors (`#1-decision-making-statements`, etc.).
-2. **Stray "Java" / "Plaintext" text before code fences**: Plain text language labels appeared before every code block instead of being part of the fence syntax. Folded into proper ` ```java ` / plain ` ``` ` fences.
-3. **Numbered list restart bug**: Under "Advanced `for` Loop Features," both items ("Multiple Control Variables" and "Infinite `for` Loop") were numbered `1.` instead of `1.` then `2.` — a Markdown renumbering glitch from manual editing. Renumbered sequentially (1, 2).
-4. **No factual/technical errors found**: Verified all code outputs by hand — the `break`/`continue` loop outputs (`1 2 3 4` and `1 2 4 5`), the `do-while` guaranteed-execution example, and the full Comprehensive Master Example's six-line output (including the labeled-break termination on the `-1` score) all check out correctly against the code shown.
