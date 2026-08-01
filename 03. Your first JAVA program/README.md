@@ -302,13 +302,3 @@ ID     | ITEM NAME    |           PRICE
 ```
 
 ---
-
-## Editorial Notes
-
-*Formatting/structural issues found and fixed — flagged here per your instructions rather than silently changed:*
-
-1. **TOC links were broken anchors**: Original TOC entries pointed to the full GitHub repo tree URL instead of relative in-page anchors. Converted to relative anchors (`#1-complete-source-code`, etc.).
-2. **Heading level collision**: The document mixed a `***title***`-style H1 for "03. Your first JAVA program" with a literal `# 04. Advanced Output Formatting with printf()` H1 midway through — making printf() look like a separate top-level chapter instead of Section 4 of Chapter 3 (which is what the Table of Contents says it is). Restructured printf() as `## 4.` with its internal parts renumbered `4.1`–`4.5` (was `1`–`5`) to nest correctly under Chapter 3.
-3. **Stray "Java" text before code fences**: Plain text language labels ("Java") appeared before several code blocks instead of being part of the fence syntax. Folded into proper ` ```java ` fences.
-4. **Not fixed (flagging only, per your "don't fix silently" rule)**: In Section 2, Line 3 anatomy, there's a typo — `"if we don;t want any new line"` — semicolon instead of apostrophe (`don't`). Left as-is in the text above; let me know if you want it corrected.
-5. **No factual/technical errors found** in the Java syntax, printf() format specifier behavior, or code examples — all appear accurate.
