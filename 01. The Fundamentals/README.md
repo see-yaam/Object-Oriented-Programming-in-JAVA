@@ -17,21 +17,21 @@
 ```mermaid
 mindmap
   root((Java Fundamentals))
-    What is Java?
+    1 - What is Java?
       WORA
       Bytecode
-    What Can You Build?
+    2 - What Can You Build?
       Enterprise Web Apps
       Android Apps
       Big Data Systems
       Financial Systems
       Cloud & Distributed Computing
-    How Java Works
+    3 - How Java Works
       Source Code .java
       javac Compiler
       Bytecode .class
       JVM Execution
-    JDK vs JRE vs JVM
+    4 - JDK vs JRE vs JVM
       JVM
         JIT Compiler
         Garbage Collector
@@ -39,7 +39,7 @@ mindmap
         JVM + Class Libraries
       JDK
         JRE + Dev Tools
-    char Encoding
+    5 - char Encoding
       C - 8-bit ASCII
       Java - 16-bit UTF-16
 ```
