@@ -1,4 +1,42 @@
-## 2. String Operations & Useful Functions
+# 08. String Handling in Java
+
+## Table of Contents
+
+1. [String Operations & Useful Functions](#1-string-operations--useful-functions)
+2. [StringTokenizer (Splitting Text Easily)](#2-stringtokenizer-splitting-text-easily)
+3. [StringBuilder (For Modifying & Reversing Text)](#3-stringbuilder-for-modifying--reversing-text)
+4. [Methods (Java's "Functions")](#4-methods-javas-functions)
+5. [🧠 Mental Model](#-mental-model)
+6. [📌 Key Terms to Remember](#-key-terms-to-remember)
+
+---
+
+## 🗺️ Mind Map
+
+```mermaid
+flowchart LR
+    Root["☕ String Handling"]
+    Root --> S1["1. String Operations"]
+    Root --> S2["2. StringTokenizer"]
+    Root --> S3["3. StringBuilder"]
+    Root --> S4["4. Methods"]
+
+    S1 --> S1a["A - Common String Functions"]
+    S1 --> S1b["B - equals vs =="]
+    S1 --> S1c["1.1 Deep Dive - Method Reference"]
+    S1 --> S1d["1.2 Deep Dive - Substring Parsing"]
+
+    S4 --> S4a["A - C vs Java Functions"]
+    S4 --> S4b["B - Method Signature Breakdown"]
+    S4 --> S4c["C - Modular Example"]
+    S4 --> S4d["D - Full Combined Master Example"]
+```
+
+*Left-to-right, top-to-bottom order matches the document's 1–4 reading sequence.*
+
+---
+
+## 1. String Operations & Useful Functions
 
 In Java, `String` comes with built-in "shortcut" functions that let you inspect, modify, and format text effortlessly.
 
@@ -18,11 +56,25 @@ Here are the most essential built-in String methods you will use every day:
 | `equalsIgnoreCase(text)` | Compares two strings ignoring capital/small letters | `"java".equalsIgnoreCase("JAVA")` | `true` |
 | `split("delimiter")` | Cuts a string into an array based on a separator | `"A,B,C".split(",")` | `["A", "B", "C"]` |
 
-# Section 2.1: Interactive String Utilities
+### B) Comparing Strings: `equals()` vs `==`
 
-In Java, `String` is an object that represents a sequence of characters. The `String` class provides a rich set of built-in methods to inspect, search, clean, and modify text content.
+> ⚠️ **Important Java Rule:** Never use `==` to compare two text strings!
+> - `==` checks if two strings share the **exact same memory location**.
+> - `.equals()` checks if two strings contain the **same text characters**.
 
-## 1. Comprehensive String Methods Reference
+```java
+String s1 = "hello";
+String s2 = new String("hello");
+
+System.out.println(s1 == s2);      // false (Different memory locations!)
+System.out.println(s1.equals(s2)); // true  (Same exact text content!)
+```
+
+### 1.1. Deep Dive: Comprehensive String Methods Reference
+
+`String` is an object that represents a sequence of characters. The `String` class provides a rich set of built-in methods to inspect, search, clean, and modify text content.
+
+#### Method Reference Table
 
 | Method | Return Type | Description / Usage |
 |---|---|---|
@@ -38,7 +90,7 @@ In Java, `String` is an object that represents a sequence of characters. The `St
 | `contains("str")` | boolean | Checks if a specific sequence of characters exists. |
 | `equalsIgnoreCase()` | boolean | Compares two strings ignoring uppercase/lowercase differences. |
 
-## 2. Code Example: String Utility Methods
+#### Code Example: String Utility Methods
 
 ```java
 public class StringMethodsDemo {
@@ -96,7 +148,7 @@ Contains 'Java'? true
 Equals Admin? true
 ```
 
-# Section 2.2: Dynamic Substring Parsing (Email Parser Project)
+### 1.2. Deep Dive: Dynamic Substring Parsing (Email Parser Project)
 
 The `substring()` method extracts a portion of a string between specified indices:
 
@@ -107,7 +159,7 @@ The `substring()` method extracts a portion of a string between specified indice
 
 Hardcoded index values like `email.substring(0, 8)` break when user input length changes. By combining `indexOf("@")` with `substring()`, we can dynamically locate boundaries in any text string regardless of its length.
 
-## Code Example: Dynamic Email Extraction
+#### Code Example: Dynamic Email Extraction
 
 ```java
 public class EmailSubstringParser {
@@ -140,7 +192,7 @@ public class EmailSubstringParser {
 }
 ```
 
-## How It Works (Step-by-Step Breakdown)
+#### How It Works (Step-by-Step Breakdown)
 
 For input string `"john.doe@gmail.com"`:
 
@@ -166,31 +218,11 @@ Domain     : gmail.com
 =================================
 ```
 
-
-### B) Comparing Strings: `equals()` vs `==`
-
-> ⚠️ **Important Java Rule:** Never use `==` to compare two text strings!
-> 
-> - `==` checks if two strings share the **exact same memory location**.
-> - `.equals()` checks if two strings contain the **same text characters**.
-
-Java
-
-```java
-String s1 = "hello";
-String s2 = new String("hello");
-
-System.out.println(s1 == s2);      // false (Different memory locations!)
-System.out.println(s1.equals(s2)); // true  (Same exact text content!)
-```
-
-## 3. StringTokenizer (Splitting Text easily)
+## 2. StringTokenizer (Splitting Text Easily)
 
 If you have a long line of text separated by spaces, commas, or hyphens, `StringTokenizer` breaks it down into individual words (called **tokens**).
 
 ### Example:
-
-Java
 
 ```java
 import java.util.StringTokenizer;
@@ -212,8 +244,6 @@ public class TokenizerSimple{
 
 ### Output:
 
-Plaintext
-
 ```
 Apple
 Banana
@@ -221,11 +251,9 @@ Mango
 Orange
 ```
 
-## 4. `StringBuilder` (For Modifying & Reversing Text)
+## 3. StringBuilder (For Modifying & Reversing Text)
 
 Standard Strings in Java cannot be altered once created. If you want to modify, append, or reverse a string easily, use `StringBuilder`:
-
-Java
 
 ```java
 public class StringBuilderSimple{
@@ -240,32 +268,29 @@ public class StringBuilderSimple{
 }
 ```
 
-## 5. Methods (Java's "Functions")
+## 4. Methods (Java's "Functions")
 
 In C, you defined functions outside `main()` and called them directly. In Java, functions are called **Methods**.
 
 ### A) Comparing C vs Java Functions
 
 - **In C:**
-    
-    ```c
-    int add(int a, int b){
-        return a + b;
-    }
-    ```
-    
+
+```c
+int add(int a, int b){
+    return a + b;
+}
+```
+
 - **In Java:**
-    
-    ```java
-    public static int add(int a, int b){
-        return a + b;
-    }
-    ```
-    
+
+```java
+public static int add(int a, int b){
+    return a + b;
+}
+```
 
 ### B) Line-by-Line Breakdown of a Java Helper Function
-
-Java
 
 ```java
 public static int calculateSum(int num1, int num2)
@@ -282,8 +307,6 @@ public static int calculateSum(int num1, int num2)
 ### C) Clean Modular Example (Keeping `main` Simple)
 
 Notice how in this example, `main()` only handles user input and output, while all calculation and formatting logic is handed off to separate helper functions:
-
-Java
 
 ```java
 import java.util.Scanner;
@@ -341,8 +364,6 @@ This program brings everything together:
 - Uses String utilities (`replace`, `StringBuilder`, `StringTokenizer`)
 - Keeps `main()` clean by delegating tasks to static helper functions
 
-Java
-
 ```java
 import java.util.Scanner;
 import java.util.StringTokenizer;
@@ -391,8 +412,6 @@ public class TextProcessorApp{
 
 ### Sample Output:
 
-Plaintext
-
 ```
 Enter a sentence: Java Programming is Fun
 
@@ -422,3 +441,5 @@ URL Format (Slug) : java-programming-is-fun
 - **`StringBuilder`** — mutable text tool for efficient append/reverse/modify
 - **`StringTokenizer`** — splits text into tokens based on a delimiter
 - **Method** — Java's term for a function, usually `static` when called directly from `main`
+
+---
