@@ -1,22 +1,53 @@
-# ***05. Operators in Java***
+# 05. Operators in Java
 
 ## Table of Contents
 
-1. [Arithmetic Operators](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/tree/main/05.%20Operators%20in%20Java#1-arithmetic-operators)
-2. [Unary & Increment / Decrement Operators](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/tree/main/05.%20Operators%20in%20Java#2-unary--increment--decrement-operators)
-3. [Relational & Logical Operators (Short-Circuit Evaluation)](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/tree/main/05.%20Operators%20in%20Java#3-relational--logical-operators-short-circuit-evaluation)
-4. [Assignment & Ternary Operators](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/tree/main/05.%20Operators%20in%20Java#4-assignment--ternary-operators)
-5. [Bitwise & Shift Operators](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/tree/main/05.%20Operators%20in%20Java#5-bitwise--shift-operators)
-6. [Operator Precedence & Associativity Table(High→Low)](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/tree/main/05.%20Operators%20in%20Java#6-operator-precedence--associativity-tablehighlow)
-7. [Comprehensive Cheat Sheet & Summary](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/tree/main/05.%20Operators%20in%20Java#7-comprehensive-cheat-sheet--summary)
-8. [🧠 Mental Model](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/tree/main/05.%20Operators%20in%20Java#-mental-model)
-9. [📌 Key Terms to Remember](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/tree/main/05.%20Operators%20in%20Java#-key-terms-to-remember)
+1. [Arithmetic Operators](#1-arithmetic-operators)
+2. [Unary & Increment / Decrement Operators](#2-unary--increment--decrement-operators)
+3. [Relational & Logical Operators (Short-Circuit Evaluation)](#3-relational--logical-operators-short-circuit-evaluation)
+4. [Assignment & Ternary Operators](#4-assignment--ternary-operators)
+5. [Bitwise & Shift Operators](#5-bitwise--shift-operators)
+6. [Operator Precedence & Associativity Table (High→Low)](#6-operator-precedence--associativity-table-highlow)
+7. [Comprehensive Cheat Sheet & Summary](#7-comprehensive-cheat-sheet--summary)
+8. [🧠 Mental Model](#-mental-model)
+9. [📌 Key Terms to Remember](#-key-terms-to-remember)
+
+---
+
+## 🗺️ Mind Map
+
+```mermaid
+flowchart LR
+    Root["☕ Operators"]
+    Root --> S1["1. Arithmetic"]
+    Root --> S2["2. Unary & Inc/Dec"]
+    Root --> S3["3. Relational & Logical"]
+    Root --> S4["4. Assignment & Ternary"]
+    Root --> S5["5. Bitwise & Shift"]
+    Root --> S6["6. Precedence Table"]
+    Root --> S7["7. Cheat Sheet"]
+
+    S3 --> S3a["Relational Ops"]
+    S3 --> S3b["Logical Ops"]
+    S3 --> S3c["3.1 Deep Dive - Short-Circuit"]
+    S3c --> S3c1["Quick Reference"]
+    S3c --> S3c2["Weather Example"]
+    S3c --> S3c3["Truth Tables"]
+
+    S4 --> S4a["Assignment Operators"]
+    S4 --> S4b["Ternary Operator"]
+
+    S5 --> S5a["AND / OR / XOR / NOT"]
+    S5 --> S5b["Left / Right Shift"]
+```
+
+*Left-to-right, top-to-bottom order matches the document's 1–7 reading sequence.*
 
 ---
 
 An **operator** is a symbol that performs specific operations on one, two, or three operands and produces a result.
 
-### 1. Arithmetic Operators
+## 1. Arithmetic Operators
 
 Used to perform basic mathematical operations.
 
@@ -29,11 +60,8 @@ Used to perform basic mathematical operations.
 | `%` | Modulus | `a % b` | Returns the remainder of division. |
 
 > **Integer Division Pitfall:** Dividing two integers in Java produces an **integer result** (truncates remainder). To get decimal precision, at least one operand must be a floating-point type (`float` or `double`).
-> 
 
 #### Code Example:
-
-Java
 
 ```java
 public class ArithmeticOperators{
@@ -53,8 +81,6 @@ public class ArithmeticOperators{
 
 #### Output:
 
-Plaintext
-
 ```
 Addition (x + y): 19
 Subtraction (x - y): 11
@@ -64,7 +90,7 @@ Double Division ((double)x / y): 3.75
 Modulus Remainder (x % y): 3
 ```
 
-### 2. Unary & Increment / Decrement Operators
+## 2. Unary & Increment / Decrement Operators
 
 Operate on a single operand.
 
@@ -79,8 +105,6 @@ Operate on a single operand.
 | `!` | Logical NOT (inverts boolean value). |
 
 #### Code Example:
-
-Java
 
 ```java
 public class UnaryOperators{
@@ -103,27 +127,22 @@ public class UnaryOperators{
 
 #### Output:
 
-Plaintext
-
 ```
 Prefix Result (++a): 6 | Final a: 6
 Postfix Result (b++): 5 | Final b: 6
 Negated Boolean (!flag): false
 ```
 
-### 3. Relational & Logical Operators (Short-Circuit Evaluation)
+## 3. Relational & Logical Operators (Short-Circuit Evaluation)
 
 - **Relational Operators:** Compare two values and return a `boolean` (`==`, `!=`, `>`, `<`, `>=`, `<=`).
 - **Logical Operators:** Combine boolean expressions (`&&`, `||`, `!`).
 
 > **Short-Circuit Evaluation:**
-> 
 > - **`&&` (Logical AND):** If the left operand is `false`, Java **skips** evaluating the right operand completely (because the result is guaranteed to be `false`).
 > - **`||` (Logical OR):** If the left operand is `true`, Java **skips** evaluating the right operand completely (because the result is guaranteed to be `true`).
 
 #### Code Example:
-
-Java
 
 ```java
 public class LogicalOperators{
@@ -149,20 +168,16 @@ public class LogicalOperators{
 
 #### Output:
 
-Plaintext
-
 ```
 Can drive: true
 Count value after short-circuit test: 10
 ```
 
-### 3.1: Practical Logic & Short-Circuit Evaluation
-
+### 3.1. Deep Dive: Practical Logic & Short-Circuit Evaluation
 
 Logical operators allow a Java program to evaluate multiple conditions simultaneously and make complex decisions. They operate exclusively on boolean values (true or false) and return a boolean result.
 
-### A. Quick Reference: Logical Operators
-
+#### A. Quick Reference: Logical Operators
 
 | Operator | Name | Description | True Condition |
 |---|---|---|---|
@@ -170,7 +185,7 @@ Logical operators allow a Java program to evaluate multiple conditions simultane
 | `\|\|` | Logical OR | Returns true if AT LEAST ONE condition is true. | `(A \|\| B)` is true if $A = \text{true}$ or $B = \text{true}$ |
 | `!` | Logical NOT | Inverts/flips the boolean value (true becomes false, false becomes true). | `(!A)` is true if $A = \text{false}$ |
 
-### B. Deep Dive: Short-Circuit Evaluation
+#### B. Deep Dive: Short-Circuit Evaluation
 
 Java uses Short-Circuit Evaluation for `&&` and `||` operators to optimize performance and prevent unnecessary computations:
 
@@ -186,7 +201,7 @@ if (number != 0 && (100 / number) > 5) { ... }
 // If 'number' is 0, the first condition is false, so Java skips (100 / number) and avoids ArithmeticException!
 ```
 
-### C. Practical Example: Weather Checking System
+#### C. Practical Example: Weather Checking System
 
 The following program demonstrates how to combine AND (`&&`), OR (`||`), and NOT (`!`) operators to build a multi-condition decision tree.
 
@@ -221,7 +236,7 @@ public class LogicalOperatorsDemo {
 }
 ```
 
-### D. Line-by-Line Code Breakdown
+#### D. Line-by-Line Code Breakdown
 
 Let's evaluate how Java processes the code when `temp = 35` and `isSunny = true`:
 
@@ -246,7 +261,7 @@ $$\text{Condition: } (\text{temp} > 30 \text{ OR } \text{temp} < 0)$$
 - `temp > 30` $\rightarrow$ `35 > 30` evaluates to `true`.
 - **Short-Circuit Effect:** Because the first condition in an `||` chain is true, Java skips evaluating `temp < 0`. The entire block evaluates to `true`.
 
-### E. Console Output
+#### E. Console Output
 
 ```
 The weather is BAD 😩
@@ -254,7 +269,7 @@ The weather is BAD 😩
 
 (If you change `temp = 25` and `isSunny = false`, the output will automatically switch to "The weather is GOOD 😀 / It is CLOUDY outside ☁").
 
-### F. Truth Tables Summary
+#### F. Truth Tables Summary
 
 For quick reference when constructing complex logical rules:
 
@@ -283,16 +298,13 @@ For quick reference when constructing complex logical rules:
 | true | false |
 | false | true |
 
-### 4. Assignment & Ternary Operators
+## 4. Assignment & Ternary Operators
 
-#### Assignment Operators
+### Assignment Operators
 
 Combines arithmetic operations with variable assignment (`+=`, `-=`, `*=`, `/=`, `%=`).
 
 > **Built-in Casting Benefit:** Compound assignment operators implicitly cast the result to the variable's original type!
-> 
-
-Java
 
 ```java
 byte b = 10;
@@ -300,19 +312,15 @@ byte b = 10;
 b += 5;        // VALID: Equivalent to b = (byte)(b + 5)
 ```
 
-#### Ternary Operator
+### Ternary Operator
 
 Shorthand for `if-else` statement taking three operands.
-
-Java
 
 ```java
 variable = (condition) ? valueIfTrue : valueIfFalse;
 ```
 
 #### Code Example:
-
-Java
 
 ```java
 public class AssignmentAndTernary{
@@ -338,22 +346,20 @@ public class AssignmentAndTernary{
 
 #### Output:
 
-Plaintext
-
 ```
 Updated Balance: 300
 Exam Result: PASS
 Max Number: 82
 ```
 
-### 5. Bitwise & Shift Operators
+## 5. Bitwise & Shift Operators
 
 Bitwise operators manipulate individual bits of integer data types (`byte`, `short`, `int`, `long`).
 
 | **Operator** | **Name** | **Description** | **Example (a=5, b=3)** |
 | --- | --- | --- | --- |
 | `&` | Bitwise AND | Sets bit to 1 if both bits are 1. | `5 & 3` (0101 & 0011 = 0001 = 1) |
-| `|` | Bitwise OR | Sets bit to 1 if either bit is 1. | `5 | 3` (0101 | 0011 = 0111 = 7) |
+| `\|` | Bitwise OR | Sets bit to 1 if either bit is 1. | `5 \| 3` (0101 \| 0011 = 0111 = 7) |
 | `^` | Bitwise XOR | Sets bit to 1 if bits are different. | `5 ^ 3` (0101 ^ 0011 = 0110 = 6) |
 | `~` | Bitwise NOT | Inverts all bits (Two's complement). | `~5` (~00000101 = -6) |
 | `<<` | Left Shift | Shifts bits left, fills right with 0 (x * 2^n). | `5 << 1` (5 * 2 = 10) |
@@ -361,8 +367,6 @@ Bitwise operators manipulate individual bits of integer data types (`byte`, `sho
 | `>>>` | Unsigned Right Shift | Shifts bits right, fills left with 0s regardless of sign. | `-20 >>> 2` (= 1073741819) |
 
 #### Code Example:
-
-Java
 
 ```java
 public class BitwiseOperators{
@@ -385,8 +389,6 @@ public class BitwiseOperators{
 
 #### Output:
 
-Plaintext
-
 ```
 Bitwise AND (a & b): 1
 Bitwise OR  (a | b): 7
@@ -396,7 +398,7 @@ Left Shift (8 << 2):  32
 Right Shift (8 >> 2): 2
 ```
 
-### 6. Operator Precedence & Associativity Table(High→Low)
+## 6. Operator Precedence & Associativity Table (High→Low)
 
 Higher operators in the table are evaluated **first**.
 
@@ -411,11 +413,11 @@ Higher operators in the table are evaluated **first**.
 | **Equality** | `==` `!=` | Left to Right |
 | **Bitwise AND** | `&` | Left to Right |
 | **Bitwise XOR** | `^` | Left to Right |
-| **Bitwise OR** | ` | ` |
+| **Bitwise OR** | `\|` | Left to Right |
 | **Logical AND** | `&&` | Left to Right |
-| **Logical OR** | ` |  |
+| **Logical OR** | `\|\|` | Left to Right |
 | **Ternary** | `? :` | Right to Left |
-| **Assignment** | `=` `+=` `-=` `*=` `/=` `%=` `&=` `^=` ` | = ``<<= ``>>= ``>>>=` |
+| **Assignment** | `=` `+=` `-=` `*=` `/=` `%=` `&=` `^=` `\|=` `<<=` `>>=` `>>>=` | Right to Left |
 
 ## 7. Comprehensive Cheat Sheet & Summary
 
@@ -428,7 +430,7 @@ Higher operators in the table are evaluated **first**.
 | **Type Promotion** | `byte + byte` $\rightarrow$ `int` | Expressions promote small integer types to `int` automatically. |
 | **Integer Division** | `5 / 2` $\rightarrow$ `2` | Integer division drops decimals. Use `5.0 / 2` for `2.5`. |
 | **Post vs Pre Inc** | `i++` vs `++i` | `++i` increments first; `i++` evaluates expression first. |
-| **Short-Circuiting** | `a && b`, `a || b` | Skips second operand evaluation if final boolean result is determined by first. |
+| **Short-Circuiting** | `a && b`, `a \|\| b` | Skips second operand evaluation if final boolean result is determined by first. |
 | **Ternary Operator** | `x > y ? x : y` | Compact conditional evaluation returning a value. |
 
 ## 🧠 Mental Model
@@ -443,7 +445,9 @@ Think of operators as **umpire signals during a match**:
 ## 📌 Key Terms to Remember
 
 - **Short-circuit evaluation** — skipping the second operand when the result is already determined
-- **Compound assignment** — `+=`, `=` etc., which auto-cast back to the original type
+- **Compound assignment** — `+=`, `-=` etc., which auto-cast back to the original type
 - **Ternary operator** — `condition ? valueIfTrue : valueIfFalse`
 - **Bitwise operators** — operate on individual bits (`&`, `|`, `^`, `~`, `<<`, `>>`, `>>>`)
 - **Operator precedence** — the order operators are evaluated in a mixed expression
+
+---
