@@ -15,35 +15,39 @@
 ## 🗺️ Mind Map
 
 ```mermaid
-mindmap
-  root((Java Fundamentals))
-    1 - What is Java?
-      WORA
-      Bytecode
-    2 - What Can You Build?
-      Enterprise Web Apps
-      Android Apps
-      Big Data Systems
-      Financial Systems
-      Cloud & Distributed Computing
-    3 - How Java Works
-      Source Code .java
-      javac Compiler
-      Bytecode .class
-      JVM Execution
-    4 - JDK vs JRE vs JVM
-      JVM
-        JIT Compiler
-        Garbage Collector
-      JRE
-        JVM + Class Libraries
-      JDK
-        JRE + Dev Tools
-    5 - char Encoding
-      C - 8-bit ASCII
-      Java - 16-bit UTF-16
-```
+flowchart TD
+    Root["☕ Java Fundamentals"]
+    Root --> S1["1. What is Java?"]
+    Root --> S2["2. What Can You Build?"]
+    Root --> S3["3. How Java Works"]
+    Root --> S4["4. JDK vs JRE vs JVM"]
+    Root --> S5["5. char Encoding"]
 
+    S1 --> S1a["WORA"]
+    S1 --> S1b["Bytecode"]
+
+    S2 --> S2a["Enterprise Web Apps"]
+    S2 --> S2b["Android Apps"]
+    S2 --> S2c["Big Data Systems"]
+    S2 --> S2d["Financial Systems"]
+    S2 --> S2e["Cloud & Distributed Computing"]
+
+    S3 --> S3a["Source Code .java"]
+    S3 --> S3b["javac Compiler"]
+    S3 --> S3c["Bytecode .class"]
+    S3 --> S3d["JVM Execution"]
+
+    S4 --> S4a["JVM"]
+    S4a --> S4a1["JIT Compiler"]
+    S4a --> S4a2["Garbage Collector"]
+    S4 --> S4b["JRE"]
+    S4b --> S4b1["JVM + Class Libraries"]
+    S4 --> S4c["JDK"]
+    S4c --> S4c1["JRE + Dev Tools"]
+
+    S5 --> S5a["C - 8-bit ASCII"]
+    S5 --> S5b["Java - 16-bit UTF-16"]
+```
 ---
 
 ## 1. What is Java?
