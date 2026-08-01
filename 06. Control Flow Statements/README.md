@@ -258,6 +258,34 @@ for (double d = 0.0; d != 1.0; d += 0.1) {
     System.out.println(d); // Precision errors may prevent d from ever being exactly 1.0
 }
 ```
+## 💡 Pro Tip: Loop Delay Execution with `Thread.sleep()`
+
+By default, loops run as fast as the CPU allows. You can pause loop execution for a specified duration in milliseconds ($1000 \text{ ms} = 1 \text{ second}$) using `Thread.sleep()`.
+
+⚠️ **Key Requirement:** Using `Thread.sleep()` requires handling `InterruptedException`. The easiest fix is adding `throws InterruptedException` to your `main` method signature.
+
+**Code Example (Countdown Timer):**
+
+```java
+public class LoopDelayDemo {
+    public static void main(String[] args) throws InterruptedException {
+        System.out.println("Rocket Launching in...");
+
+        for (int i = 3; i > 0; i--) {
+            System.out.println(i + "...");
+            Thread.sleep(1000); // Pauses for 1 second per iteration
+        }
+
+        System.out.println("🚀 BLAST OFF!");
+    }
+}
+```
+
+**Common Use Cases:**
+
+- **Timers & Countdowns:** Delaying actions between loop steps.
+- **Polling & API Checks:** Waiting before re-checking a server or database status.
+- **Console Animations:** Creating loading indicators (e.g., printing `...` over time).
 
 ## 3. Branching / Jump Statements
 
