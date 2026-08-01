@@ -8,7 +8,7 @@
 4. [StringBuilder (For Modifying & Reversing Text))](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/tree/main/07.%20Taking%20User%20Input%20%26%20String%20Handling#4-stringbuilder-for-modifying--reversing-text)
 5. [Methods (Java's "Functions")](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/tree/main/07.%20Taking%20User%20Input%20%26%20String%20Handling#5-methods-javas-functions)
 6. [🧠 Mental Model](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/tree/main/07.%20Taking%20User%20Input%20%26%20String%20Handling#-mental-model)
-7. [https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/tree/main/07.%20Taking%20User%20Input%20%26%20String%20Handling#-key-terms-to-remember](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/tree/main/07.%20Taking%20User%20Input%20%26%20String%20Handling#-key-terms-to-remember)
+7. [📌 Key Terms to Remember](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/tree/main/07.%20Taking%20User%20Input%20%26%20String%20Handling#-key-terms-to-remember)
 
 ---
 
