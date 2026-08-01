@@ -161,7 +161,7 @@ Count value after short-circuit test: 10
 
 Logical operators allow a Java program to evaluate multiple conditions simultaneously and make complex decisions. They operate exclusively on boolean values (true or false) and return a boolean result.
 
-### 1. Quick Reference: Logical Operators
+### A. Quick Reference: Logical Operators
 
 
 | Operator | Name | Description | True Condition |
@@ -170,7 +170,7 @@ Logical operators allow a Java program to evaluate multiple conditions simultane
 | `\|\|` | Logical OR | Returns true if AT LEAST ONE condition is true. | `(A \|\| B)` is true if $A = \text{true}$ or $B = \text{true}$ |
 | `!` | Logical NOT | Inverts/flips the boolean value (true becomes false, false becomes true). | `(!A)` is true if $A = \text{false}$ |
 
-### 2. Deep Dive: Short-Circuit Evaluation
+### B. Deep Dive: Short-Circuit Evaluation
 
 Java uses Short-Circuit Evaluation for `&&` and `||` operators to optimize performance and prevent unnecessary computations:
 
@@ -186,7 +186,7 @@ if (number != 0 && (100 / number) > 5) { ... }
 // If 'number' is 0, the first condition is false, so Java skips (100 / number) and avoids ArithmeticException!
 ```
 
-### 3. Practical Example: Weather Checking System
+### C. Practical Example: Weather Checking System
 
 The following program demonstrates how to combine AND (`&&`), OR (`||`), and NOT (`!`) operators to build a multi-condition decision tree.
 
@@ -221,7 +221,7 @@ public class LogicalOperatorsDemo {
 }
 ```
 
-### 4. Line-by-Line Code Breakdown
+### D. Line-by-Line Code Breakdown
 
 Let's evaluate how Java processes the code when `temp = 35` and `isSunny = true`:
 
@@ -246,7 +246,7 @@ $$\text{Condition: } (\text{temp} > 30 \text{ OR } \text{temp} < 0)$$
 - `temp > 30` $\rightarrow$ `35 > 30` evaluates to `true`.
 - **Short-Circuit Effect:** Because the first condition in an `||` chain is true, Java skips evaluating `temp < 0`. The entire block evaluates to `true`.
 
-### 5. Console Output
+### E. Console Output
 
 ```
 The weather is BAD 😩
@@ -254,7 +254,7 @@ The weather is BAD 😩
 
 (If you change `temp = 25` and `isSunny = false`, the output will automatically switch to "The weather is GOOD 😀 / It is CLOUDY outside ☁").
 
-### 6. Truth Tables Summary
+### F. Truth Tables Summary
 
 For quick reference when constructing complex logical rules:
 
