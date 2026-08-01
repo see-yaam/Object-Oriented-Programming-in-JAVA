@@ -1,5 +1,17 @@
 # ***04. Variables, Literals, Data Types & Type Casting***
 
+## Table of Contents
+
+1. [Variables & Memory](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/blob/main/04.%20Variables%2C%20Literals%2C%20Data%20Types%20%26%20Type%20Casting/README.md#1-variables--memory)
+2. [Literals](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/blob/main/04.%20Variables%2C%20Literals%2C%20Data%20Types%20%26%20Type%20Casting/README.md#2-literals)
+3. [Type Conversion & Type Casting](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/blob/main/04.%20Variables%2C%20Literals%2C%20Data%20Types%20%26%20Type%20Casting/README.md#3-type-conversion--type-casting)
+4. [Automatic Type Promotion in Expressions](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/blob/main/04.%20Variables%2C%20Literals%2C%20Data%20Types%20%26%20Type%20Casting/README.md#4-automatic-type-promotion-in-expressions)
+5. [Comprehensive Cheat Sheet & Reference Table](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/blob/main/04.%20Variables%2C%20Literals%2C%20Data%20Types%20%26%20Type%20Casting/README.md#5-comprehensive-cheat-sheet--reference-table)
+6. [🧠 Mental Model](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/blob/main/04.%20Variables%2C%20Literals%2C%20Data%20Types%20%26%20Type%20Casting/README.md#-mental-model)
+7. [📌 Key Terms to Remember](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/blob/main/04.%20Variables%2C%20Literals%2C%20Data%20Types%20%26%20Type%20Casting/README.md#-key-terms-to-remember)
+
+---
+
 ## 1. Variables & Memory
 
 A **variable** is a named location in the computer's memory that holds a data value during execution. Think of a variable as a labeled storage box: the label is the variable name, the box size is defined by the data type, and the item inside is the value.
