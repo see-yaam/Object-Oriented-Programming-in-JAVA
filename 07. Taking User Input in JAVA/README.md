@@ -174,6 +174,154 @@ Here are the most essential built-in String methods you will use every day:
 | `equalsIgnoreCase(text)` | Compares two strings ignoring capital/small letters | `"java".equalsIgnoreCase("JAVA")` | `true` |
 | `split("delimiter")` | Cuts a string into an array based on a separator | `"A,B,C".split(",")` | `["A", "B", "C"]` |
 
+# Section 2.1: Interactive String Utilities
+
+In Java, `String` is an object that represents a sequence of characters. The `String` class provides a rich set of built-in methods to inspect, search, clean, and modify text content.
+
+## 1. Comprehensive String Methods Reference
+
+| Method | Return Type | Description / Usage |
+|---|---|---|
+| `length()` | int | Returns the total number of characters in the string. |
+| `charAt(index)` | char | Returns the character at the specified index. |
+| `indexOf("str")` | int | Returns index of first occurrence of text (or -1 if not found). |
+| `lastIndexOf("str")` | int | Returns index of last occurrence of text (or -1 if not found). |
+| `toLowerCase()` | String | Converts all characters to lowercase. |
+| `toUpperCase()` | String | Converts all characters to uppercase. |
+| `trim()` | String | Removes leading and trailing whitespaces. |
+| `replace(old, new)` | String | Replaces all occurrences of a character/sequence with a new one. |
+| `isEmpty()` | boolean | Returns true if length is 0. |
+| `contains("str")` | boolean | Checks if a specific sequence of characters exists. |
+| `equalsIgnoreCase()` | boolean | Compares two strings ignoring uppercase/lowercase differences. |
+
+## 2. Code Example: String Utility Methods
+
+```java
+public class StringMethodsDemo {
+    public static void main(String[] args) {
+
+        String rawText = "   Hello Java Developers!   ";
+        String name = "Bro Code";
+
+        // 1. Length & Inspection
+        System.out.println("Original Length: " + rawText.length());
+        
+        // 2. Trimming Whitespace
+        String trimmedText = rawText.trim();
+        System.out.println("Trimmed Text: '" + trimmedText + "'");
+        System.out.println("Trimmed Length: " + trimmedText.length());
+
+        // 3. Case Conversion
+        System.out.println("Uppercase: " + trimmedText.toUpperCase());
+        System.out.println("Lowercase: " + trimmedText.toLowerCase());
+
+        // 4. Character Retrieval & Searching
+        System.out.println("Character at index 4: " + trimmedText.charAt(4));
+        System.out.println("First index of 'e': " + trimmedText.indexOf('e'));
+        System.out.println("Last index of 'e': " + trimmedText.lastIndexOf('e'));
+
+        // 5. Manipulation & Replacement
+        String replacedText = trimmedText.replace('o', 'a');
+        System.out.println("Replaced ('o' -> 'a'): " + replacedText);
+
+        // 6. Boolean Checks
+        System.out.println("Is Empty? " + name.isEmpty());
+        System.out.println("Contains 'Java'? " + trimmedText.contains("Java"));
+        
+        // 7. Case-Insensitive Comparison
+        String userRole = "ADMIN";
+        System.out.println("Equals Admin? " + userRole.equalsIgnoreCase("admin"));
+    }
+}
+```
+
+**Output:**
+
+```
+Original Length: 28
+Trimmed Text: 'Hello Java Developers!'
+Trimmed Length: 22
+Uppercase: HELLO JAVA DEVELOPERS!
+Lowercase: hello java developers!
+Character at index 4: o
+First index of 'e': 1
+Last index of 'e': 18
+Replaced ('o' -> 'a'): Hella Java Develapers!
+Is Empty? false
+Contains 'Java'? true
+Equals Admin? true
+```
+
+# Section 2.2: Dynamic Substring Parsing (Email Parser Project)
+
+The `substring()` method extracts a portion of a string between specified indices:
+
+- `substring(startIndex)`: Extracts from `startIndex` to the end of the string.
+- `substring(startIndex, endIndex)`: Extracts from `startIndex` up to (but not including) `endIndex`.
+
+**💡 Why Dynamic Substring Parsing?**
+
+Hardcoded index values like `email.substring(0, 8)` break when user input length changes. By combining `indexOf("@")` with `substring()`, we can dynamically locate boundaries in any text string regardless of its length.
+
+## Code Example: Dynamic Email Extraction
+
+```java
+public class EmailSubstringParser {
+    public static void main(String[] args) {
+
+        String email = "john.doe@gmail.com";
+
+        // Step 1: Dynamically find the index position of '@'
+        int atSymbolIndex = email.indexOf("@");
+
+        // Step 2: Validate if '@' symbol exists
+        if (atSymbolIndex != -1) {
+
+            // Extract Username (from index 0 up to '@')
+            String username = email.substring(0, atSymbolIndex);
+
+            // Extract Domain (from index after '@' to the end)
+            String domain = email.substring(atSymbolIndex + 1);
+
+            System.out.println("=================================");
+            System.out.println("Full Email : " + email);
+            System.out.println("Username   : " + username);
+            System.out.println("Domain     : " + domain);
+            System.out.println("=================================");
+
+        } else {
+            System.out.println("Invalid email address: Missing '@' symbol.");
+        }
+    }
+}
+```
+
+## How It Works (Step-by-Step Breakdown)
+
+For input string `"john.doe@gmail.com"`:
+
+```
+  Index:   0 1 2 3 4 5 6 7  8  9 10 11 12 13 14 15 16 17
+  Char:    j o h n . d o e  @  g  m  a  i  l  .  c  o  m
+                            ▲
+                            │
+                    indexOf("@") = 8
+```
+
+- `email.indexOf("@")` finds the exact position of `@`, which is index 8.
+- `email.substring(0, 8)` extracts characters from index 0 to 7 $\rightarrow$ `"john.doe"`.
+- `email.substring(8 + 1)` starts at index 9 through the end of string $\rightarrow$ `"gmail.com"`.
+
+**Output:**
+
+```
+=================================
+Full Email : john.doe@gmail.com
+Username   : john.doe
+Domain     : gmail.com
+=================================
+```
+
 
 ### B) Comparing Strings: `equals()` vs `==`
 
