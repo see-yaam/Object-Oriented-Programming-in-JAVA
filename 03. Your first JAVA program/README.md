@@ -30,8 +30,6 @@ flowchart LR
     S4 --> S4e["4.5 Master Example"]
 ```
 
-*Left-to-right, top-to-bottom order matches the document's 1–4 reading sequence.*
-
 ---
 
 The standard Java "Hello World" program serves as the entry point for understanding Java syntax, structure, and execution semantics.
