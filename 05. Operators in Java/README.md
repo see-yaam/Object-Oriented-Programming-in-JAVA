@@ -41,8 +41,6 @@ flowchart LR
     S5 --> S5b["Left / Right Shift"]
 ```
 
-*Left-to-right, top-to-bottom order matches the document's 1–7 reading sequence.*
-
 ---
 
 An **operator** is a symbol that performs specific operations on one, two, or three operands and produces a result.
