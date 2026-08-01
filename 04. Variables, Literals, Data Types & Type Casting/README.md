@@ -39,8 +39,6 @@ flowchart LR
     S4 --> S4b["Rule 2 - Dominant Operand Rule"]
 ```
 
-*Left-to-right, top-to-bottom order matches the document's 1–5 reading sequence.*
-
 ---
 
 ## 1. Variables & Memory
