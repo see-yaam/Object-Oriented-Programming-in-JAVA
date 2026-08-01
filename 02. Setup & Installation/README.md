@@ -10,27 +10,31 @@
 ---
 
 ## 🗺️ Mind Map
-
+ 
 ```mermaid
-mindmap
-  root((Java Setup))
-    Step 1 - Install JDK
-      Oracle JDK
-      Adoptium Temurin
-      Java SE 21 LTS
-    Step 2 - JAVA_HOME
-      Windows
-        System Environment Variables
-        Path Variable
-      macOS / Linux
-        .zshrc / .bashrc
-    Step 3 - Verify
-      java -version
-      javac -version
-    Step 4 - IntelliJ IDEA
-      New Project
-      Main.java
-      Run - Hello World
+flowchart LR
+    Root["☕ Java Setup"]
+    Root --> S1["1. Install JDK"]
+    Root --> S2["2. Configure JAVA_HOME"]
+    Root --> S3["3. Verify Installation"]
+    Root --> S4["4. IntelliJ IDEA Setup"]
+ 
+    S1 --> S1a["Oracle JDK"]
+    S1 --> S1b["Adoptium Temurin"]
+    S1 --> S1c["Java SE 21 LTS"]
+ 
+    S2 --> S2a["Windows"]
+    S2a --> S2a1["System Environment Variables"]
+    S2a --> S2a2["Path Variable"]
+    S2 --> S2b["macOS / Linux"]
+    S2b --> S2b1[".zshrc / .bashrc"]
+ 
+    S3 --> S3a["java -version"]
+    S3 --> S3b["javac -version"]
+ 
+    S4 --> S4a["New Project"]
+    S4 --> S4b["Main.java"]
+    S4 --> S4c["Run - Hello World"]
 ```
 
 ---
