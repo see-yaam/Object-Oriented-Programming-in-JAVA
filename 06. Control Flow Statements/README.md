@@ -1,12 +1,43 @@
-# ***06. Control Flow Statements***
+# 06. Control Flow Statements
 
 ## Table of Contents
 
-1. [Decision-Making Statements](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/tree/main/06.%20Control%20Flow%20Statements#1-decision-making-statements)
-2. [Looping (Iterative) Statements](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/tree/main/06.%20Control%20Flow%20Statements#2-looping-iterative-statements)
-3. [Branching / Jump Statements](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/tree/main/06.%20Control%20Flow%20Statements#3-branching--jump-statements)
-4. [Summary & Comparison Table](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/tree/main/06.%20Control%20Flow%20Statements#4-summary--comparison-table)
-5. [Comprehensive Master Example](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/tree/main/06.%20Control%20Flow%20Statements#5-comprehensive-master-example)
+1. [Decision-Making Statements](#1-decision-making-statements)
+2. [Looping (Iterative) Statements](#2-looping-iterative-statements)
+3. [Branching / Jump Statements](#3-branching--jump-statements)
+4. [Summary & Comparison Table](#4-summary--comparison-table)
+5. [Comprehensive Master Example](#5-comprehensive-master-example)
+
+---
+
+## 🗺️ Mind Map
+
+```mermaid
+flowchart LR
+    Root["☕ Control Flow"]
+    Root --> S1["1. Decision-Making"]
+    Root --> S2["2. Looping"]
+    Root --> S3["3. Branching / Jump"]
+    Root --> S4["4. Summary Table"]
+    Root --> S5["5. Master Example"]
+
+    S1 --> S1a["A - if"]
+    S1 --> S1b["B - if-else"]
+    S1 --> S1c["C - if-else-if Ladder"]
+    S1 --> S1d["D - Nested if-else"]
+    S1 --> S1e["E - switch (traditional & modern)"]
+
+    S2 --> S2a["A - while"]
+    S2 --> S2b["B - do-while"]
+    S2 --> S2c["C - for"]
+    S2 --> S2d["D - for-each"]
+    S2 --> S2e["Thread.sleep Pro Tip"]
+
+    S3 --> S3a["A - break"]
+    S3 --> S3b["B - continue"]
+    S3 --> S3c["C - Labeled break/continue"]
+    S3 --> S3d["D - return"]
+```
 
 ---
 
@@ -28,8 +59,6 @@ Decision-making statements execute specific blocks of code based on whether a bo
 
 Executes a block of code **only** if the specified condition is `true`.
 
-Java
-
 ```java
 int age = 20;
 
@@ -41,8 +70,6 @@ if (age >= 18) {
 ### B) `if-else` Statement
 
 Executes the `if` block if the condition is `true`, and the `else` block if the condition is `false`.
-
-Java
 
 ```java
 int number = 7;
@@ -57,8 +84,6 @@ if (number % 2 == 0) {
 ### C) `if-else-if` Ladder
 
 Evaluates multiple conditions sequentially. The first condition that evaluates to `true` executes its corresponding block, skipping the rest.
-
-Java
 
 ```java
 int marks = 75;
@@ -77,8 +102,6 @@ if (marks >= 80) {
 ### D) Nested `if-else`
 
 An `if` or `else` block containing another `if-else` statement inside it.
-
-Java
 
 ```java
 int age = 25;
@@ -99,8 +122,6 @@ if (age >= 18) {
 
 In Java, an `else` block always pairs with the **closest unclosed `if` statement**, regardless of code indentation.
 
-Java
-
 ```java
 // Misleading indentation example:
 if (a > 10)
@@ -112,7 +133,6 @@ else
 ```
 
 > **Best Practice:** Always enclose `if` and `else` blocks in curly braces `{}` to avoid ambiguity.
-> 
 
 ### E) `switch` Statement (Traditional vs. Modern)
 
@@ -122,8 +142,6 @@ The `switch` statement selects one of many code blocks to execute based on a sin
 
 - **Supported Data Types:** `byte`, `short`, `char`, `int`, `String`, and `Enum` (does **not** support `long`, `float`, `double`, or `boolean`).
 - **Fall-Through Behavior:** Without a `break` statement at the end of a case, execution "falls through" into subsequent cases automatically.
-
-Java
 
 ```java
 int day = 2;
@@ -146,8 +164,6 @@ switch (day) {
 #### 2. Enhanced `switch` Expression (Java 14+)
 
 Modern Java introduces arrow syntax (`->`) that eliminates fall-through bugs and allows returning values directly without requiring `break` statements.
-
-Java
 
 ```java
 int day = 2;
@@ -172,8 +188,6 @@ Loops execute a block of code repeatedly as long as a specified condition remain
 
 Evaluates the condition **before** executing the loop body. If the initial condition is `false`, the loop body never runs.
 
-Java
-
 ```java
 int count = 1;
 
@@ -186,8 +200,6 @@ while (count <= 3) {
 ### B) `do-while` Loop (Post-Test Loop)
 
 Executes the loop body **first**, then evaluates the condition. Guarantees that the loop body executes **at least once**, even if the condition is initially `false`.
-
-Java
 
 ```java
 int count = 5;
@@ -202,8 +214,6 @@ do {
 
 Ideal when the exact number of iterations is known in advance. Consists of three parts: `for (Initialization; Condition; Update)`.
 
-Java
-
 ```java
 for (int i = 1; i <= 3; i++) {
     System.out.println("Iteration: " + i);
@@ -214,17 +224,13 @@ for (int i = 1; i <= 3; i++) {
 
 1. **Multiple Control Variables (Comma Operator):**
 
-Java
-
 ```java
 for (int i = 0, j = 10; i < j; i++, j--) {
     System.out.println("i: " + i + ", j: " + j);
 }
 ```
 
-1. **Infinite `for` Loop:**
-
-Java
+2. **Infinite `for` Loop:**
 
 ```java
 for (;;) {
@@ -235,8 +241,6 @@ for (;;) {
 ### D) Enhanced `for` Loop (`for-each`)
 
 Designed specifically for iterating over elements in Arrays or Collections cleanly, without managing an explicit index counter.
-
-Java
 
 ```java
 int[] numbers = {10, 20, 30, 40};
@@ -250,15 +254,14 @@ for (int num : numbers) {
 
 Avoid using `float` or `double` variables as loop control counters due to precision limitations in binary floating-point representation.
 
-Java
-
 ```java
 // Dangerous Infinite Loop Risk!
 for (double d = 0.0; d != 1.0; d += 0.1) {
     System.out.println(d); // Precision errors may prevent d from ever being exactly 1.0
 }
 ```
-## 💡 Pro Tip: Loop Delay Execution with `Thread.sleep()`
+
+### 💡 Pro Tip: Loop Delay Execution with `Thread.sleep()`
 
 By default, loops run as fast as the CPU allows. You can pause loop execution for a specified duration in milliseconds ($1000 \text{ ms} = 1 \text{ second}$) using `Thread.sleep()`.
 
@@ -295,8 +298,6 @@ Jump statements alter execution by transferring control to another part of the p
 
 Terminates the innermost enclosing loop or `switch` block immediately.
 
-Java
-
 ```java
 for (int i = 1; i <= 10; i++) {
     if (i == 5) {
@@ -309,8 +310,6 @@ for (int i = 1; i <= 10; i++) {
 ### B) `continue` Statement
 
 Skips the remaining statements in the current loop iteration and moves directly to the next iteration.
-
-Java
 
 ```java
 for (int i = 1; i <= 5; i++) {
@@ -327,8 +326,6 @@ Standard `break` and `continue` statements apply only to the innermost loop. Lab
 
 #### Labeled `break` Example:
 
-Java
-
 ```java
 outerLoop: // Label identifier
 for (int i = 1; i <= 3; i++) {
@@ -342,8 +339,6 @@ for (int i = 1; i <= 3; i++) {
 ```
 
 #### Labeled `continue` Example:
-
-Java
 
 ```java
 outerLoop:
@@ -360,8 +355,6 @@ for (int i = 1; i <= 3; i++) {
 ### D) `return` Statement
 
 Exits from the current method entirely and passes control back to the caller, optionally returning a value.
-
-Java
 
 ```java
 public class ReturnExample{
@@ -395,8 +388,6 @@ public class ReturnExample{
 | `return` | Exits from current method | Can return data back to caller. |
 
 ## 5. Comprehensive Master Example
-
-Java
 
 ```java
 public class ControlFlowMaster{
@@ -443,8 +434,6 @@ public class ControlFlowMaster{
 
 #### Output:
 
-Plaintext
-
 ```
 --- Processing Student Scores ---
 Score: 45 | Status: Passed | Grade: C
@@ -454,3 +443,14 @@ Score: 33 -> Failed! Skipping detailed report.
 Score: 100 | Status: Excellent | Grade: A+
 Negative score found (-1). Terminating process!
 ```
+
+---
+
+## Editorial Notes
+
+*Formatting/structural issues found and fixed — flagged here per your instructions rather than fixed silently:*
+
+1. **TOC links were broken anchors**: Original TOC entries pointed to the full GitHub repo tree URL instead of relative in-page anchors. Converted to relative anchors (`#1-decision-making-statements`, etc.).
+2. **Stray "Java" / "Plaintext" text before code fences**: Plain text language labels appeared before every code block instead of being part of the fence syntax. Folded into proper ` ```java ` / plain ` ``` ` fences.
+3. **Numbered list restart bug**: Under "Advanced `for` Loop Features," both items ("Multiple Control Variables" and "Infinite `for` Loop") were numbered `1.` instead of `1.` then `2.` — a Markdown renumbering glitch from manual editing. Renumbered sequentially (1, 2).
+4. **No factual/technical errors found**: Verified all code outputs by hand — the `break`/`continue` loop outputs (`1 2 3 4` and `1 2 4 5`), the `do-while` guaranteed-execution example, and the full Comprehensive Master Example's six-line output (including the labeled-break termination on the `-1` score) all check out correctly against the code shown.
