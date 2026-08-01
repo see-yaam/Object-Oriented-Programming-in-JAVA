@@ -1,19 +1,42 @@
-# ***03. Your first JAVA program: Hello World***
+# 03. Your First Java Program: Hello World
 
 ## Table of Contents
 
-1. [Complete Source Code](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/tree/main/03.%20Your%20first%20JAVA%20program#1-complete-source-code)
-2. [Word-by-Word Technical Anatomy](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/tree/main/03.%20Your%20first%20JAVA%20program#2-word-by-word-technical-anatomy)
-3. [Deep Dive: What Does the Dot (.) Operator Mean?](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/tree/main/03.%20Your%20first%20JAVA%20program#3-deep-dive-what-does-the-dot--operator-mean)
-4. [Advanced Output Formatting with printf()](https://github.com/see-yaam/Object-Oriented-Programming-in-JAVA/tree/main/03.%20Your%20first%20JAVA%20program#04-advanced-output-formatting-with-printf)
+1. [Complete Source Code](#1-complete-source-code)
+2. [Word-by-Word Technical Anatomy](#2-word-by-word-technical-anatomy)
+3. [Deep Dive: What Does the Dot (.) Operator Mean?](#3-deep-dive-what-does-the-dot--operator-mean)
+4. [Advanced Output Formatting with printf()](#4-advanced-output-formatting-with-printf)
+
+---
+
+## 🗺️ Mind Map
+
+```mermaid
+flowchart LR
+    Root["☕ Hello World"]
+    Root --> S1["1. Complete Source Code"]
+    Root --> S2["2. Word-by-Word Anatomy"]
+    Root --> S3["3. The Dot Operator"]
+    Root --> S4["4. printf Formatting"]
+
+    S2 --> S2a["Line 1 - class Main"]
+    S2 --> S2b["Line 2 - main method"]
+    S2 --> S2c["Line 3 - println statement"]
+
+    S4 --> S4a["4.1 Format Specifiers"]
+    S4 --> S4b["4.2 Precision"]
+    S4 --> S4c["4.3 Flags"]
+    S4 --> S4d["4.4 Width & Padding"]
+    S4 --> S4e["4.5 Master Example"]
+```
+
+*Left-to-right, top-to-bottom order matches the document's 1–4 reading sequence.*
 
 ---
 
 The standard Java "Hello World" program serves as the entry point for understanding Java syntax, structure, and execution semantics.
 
 ## 1. Complete Source Code
-
-Java
 
 ```java
 public class Main{
@@ -27,8 +50,6 @@ public class Main{
 
 ### Line 1: Class Definition (`public class Main`)
 
-Java
-
 ```java
 public class Main
 ```
@@ -36,13 +57,10 @@ public class Main
 - **`public`** *(Access Modifier)*: Declares the visibility of the class. Marking a class `public` means it can be accessed from any other package in the Java runtime environment.
 - **`class`** *(Keyword)*: The core building block of Java. Every executable statement in Java must reside inside a class definition.
 - **`Main`** *(Identifier)*: The name of the class.
-    
+
     > **Note:** In Java, if a class is declared `public`, the filename **must match** the class name exactly (including case). Therefore, this file must be saved as `Main.java`.
-    > 
 
 ### Line 2: The Main Method (`public static void main(String[] args)`)
-
-Java
 
 ```java
 public static void main(String[] args)
@@ -59,15 +77,13 @@ This specific method signature is the **standard execution entry point** recogni
 
 ### Line 3: Output Statement (`System.out.println("Hello, World!");`)
 
-Java
-
 ```java
 System.out.println("Hello, World!");
 ```
 
 - **`System`** *(Built-in Class)*: A `final` class provided by the `java.lang` package containing utility methods and system resources.
 - **`out`** *(Static Field)*: An instance of `java.io.PrintStream` held as a static member in the `System` class. It represents the **Standard Output Stream** (the terminal/console).
-- **`println()`** *(Method)*: Short for "print line". It outputs the provided parameter to the standard output and appends a new line (`\n`) character at the end. We can skip `ln`  if we don;t want any new line.
+- **`println()`** *(Method)*: Short for "print line". It outputs the provided parameter to the standard output and appends a new line (`\n`) character at the end. We can skip `ln` if we don;t want any new line.
 - **`"Hello, World!"`** *(String Literal)*: The exact text data passed as an argument to the `println()` method.
 - **`;`** *(Semicolon)*: The statement terminator in Java syntax. It informs the compiler that the instruction ends here.
 
@@ -86,11 +102,11 @@ System  .  out  .  println("Hello, World!");
 1. **`System.out`**: Accesses the static field `out` defined inside the `System` class.
 2. **`out.println()`**: Accesses and calls the `println()` method attached to that `out` stream object.
 
-# 04. Advanced Output Formatting with printf()
+## 4. Advanced Output Formatting with printf()
 
 While `System.out.println()` prints raw data line-by-line, `System.out.printf()` (print formatted) allows you to format text, align numbers in neat tables, control decimal precision, and add currency separators.
 
-## 1. Structure of printf() Format Specifiers
+### 4.1. Structure of printf() Format Specifiers
 
 Every format placeholder starts with a `%` symbol and follows this general pattern:
 
@@ -106,7 +122,7 @@ $$\% \text{ [flags] } \text{ [width] } \text{ [.precision] } \text{ [conversion-
   └────────────────────────── Start of Placeholder
 ```
 
-### Essential Conversion Characters
+#### Essential Conversion Characters
 
 | Specifier | Data Type | Description |
 |---|---|---|
@@ -117,7 +133,7 @@ $$\% \text{ [flags] } \text{ [width] } \text{ [.precision] } \text{ [conversion-
 | `%b` | boolean | Boolean value (true/false) |
 | `%n` | Line Break | Platform-independent newline (equivalent to `\n`) |
 
-## 2. Floating-Point Precision (.precision)
+### 4.2. Floating-Point Precision (.precision)
 
 By default, `%f` prints floating-point numbers with 6 decimal places. Using `.precision` lets you specify exact decimal places. Java automatically rounds the number to fit the precision.
 
@@ -150,7 +166,7 @@ Precision: 100455454.150
 Precision: -54.010
 ```
 
-## 3. Format Flags ([flags])
+### 4.3. Format Flags ([flags])
 
 Flags allow you to add special visual formatting to your numbers, such as comma separators, sign symbols, and parentheses for negative values.
 
@@ -189,7 +205,7 @@ Temperature Change: +100455454.150000
 Account Balance: (54.010000)
 ```
 
-## 4. Field Width & Alignment Padding ([width])
+### 4.4. Field Width & Alignment Padding ([width])
 
 Field width defines the minimum number of characters to write to the output. If the value is shorter than the width, it will be padded with spaces or zeros.
 
@@ -244,7 +260,7 @@ Item A     : $009.99
 Item B     : $154.50
 ```
 
-## 5. Master Combined Example
+### 4.5. Master Combined Example
 
 Here is a full program combining precision, flags, and width/padding together:
 
@@ -284,3 +300,15 @@ ID     | ITEM NAME    |           PRICE
 #0002 | Mouse        | $          25.50
 ==========================================
 ```
+
+---
+
+## Editorial Notes
+
+*Formatting/structural issues found and fixed — flagged here per your instructions rather than silently changed:*
+
+1. **TOC links were broken anchors**: Original TOC entries pointed to the full GitHub repo tree URL instead of relative in-page anchors. Converted to relative anchors (`#1-complete-source-code`, etc.).
+2. **Heading level collision**: The document mixed a `***title***`-style H1 for "03. Your first JAVA program" with a literal `# 04. Advanced Output Formatting with printf()` H1 midway through — making printf() look like a separate top-level chapter instead of Section 4 of Chapter 3 (which is what the Table of Contents says it is). Restructured printf() as `## 4.` with its internal parts renumbered `4.1`–`4.5` (was `1`–`5`) to nest correctly under Chapter 3.
+3. **Stray "Java" text before code fences**: Plain text language labels ("Java") appeared before several code blocks instead of being part of the fence syntax. Folded into proper ` ```java ` fences.
+4. **Not fixed (flagging only, per your "don't fix silently" rule)**: In Section 2, Line 3 anatomy, there's a typo — `"if we don;t want any new line"` — semicolon instead of apostrophe (`don't`). Left as-is in the text above; let me know if you want it corrected.
+5. **No factual/technical errors found** in the Java syntax, printf() format specifier behavior, or code examples — all appear accurate.
